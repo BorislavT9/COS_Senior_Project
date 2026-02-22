@@ -1,10 +1,12 @@
 """
 Rule engine: apply regex rules with optional anchor_before / anchor_after windowing.
-Returns first match per rule; normalizes by stripping whitespace.
+Returns first match per rule; normalizes by strip + collapse whitespace.
 """
 
 import re
 from typing import List
+
+from src.validation.normalizer import normalize
 
 from .models import Rule, ExtractionCandidate
 
@@ -49,7 +51,7 @@ def apply_rules(text: str, rules: List[Rule]) -> List[ExtractionCandidate]:
             if m is None:
                 continue
             raw = m.group(0)
-            normalized = raw.strip()
+            normalized = normalize(raw)
             abs_start = start_offset + m.start()
             abs_end = start_offset + m.end()
             results.append(

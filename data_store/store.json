@@ -1,0 +1,90 @@
+{
+  "0fa35d6b-f9d3-4b7d-a141-ee4b99f69e8d": {
+    "doc_id": "0fa35d6b-f9d3-4b7d-a141-ee4b99f69e8d",
+    "file_path": "C:\\Users\\Acer\\Documents\\Extra files\\Anti-gpt0.docx",
+    "file_type": ".docx",
+    "file_hash": "58a133eb6e0d333ff3a2ae8b82f478dd5bff70d4429e1c4a53b20cb9a9d4c2cc",
+    "processed_at": "2026-02-22T18:52:42.112216",
+    "status": "SUCCESS",
+    "error_message": null,
+    "extracted": {},
+    "extracted_raw": {}
+  },
+  "ca902852-2c04-4004-ac5b-25a04e7b5a11": {
+    "doc_id": "ca902852-2c04-4004-ac5b-25a04e7b5a11",
+    "file_path": "C:\\Users\\Acer\\Documents\\Extra files\\AUBG.xlsx",
+    "file_type": ".xlsx",
+    "file_hash": "f2a18931ce8dcc8ddb02d5ee10cf909dff042e247ac5ff44b4a59add7c9b81b2",
+    "processed_at": "2026-02-22T18:52:42.116214",
+    "status": "SUCCESS",
+    "error_message": null,
+    "extracted": {},
+    "extracted_raw": {}
+  },
+  "55bcc6c5-b5bb-4f91-b271-20b0bc0d572d": {
+    "doc_id": "55bcc6c5-b5bb-4f91-b271-20b0bc0d572d",
+    "file_path": "C:\\Users\\Acer\\Documents\\Extra files\\CV_Borislav_Todorov_2025.docx",
+    "file_type": ".docx",
+    "file_hash": "15f1037189eb4a94091f50e801d94133603c50c08c4934c6e3ff3ed0d909d290",
+    "processed_at": "2026-02-22T18:52:42.119610",
+    "status": "SUCCESS",
+    "error_message": null,
+    "extracted": {},
+    "extracted_raw": {}
+  },
+  "9a87683e-ca3d-4c31-9c47-499a9a1f74ef": {
+    "doc_id": "9a87683e-ca3d-4c31-9c47-499a9a1f74ef",
+    "file_path": "C:\\Users\\Acer\\Documents\\Extra files\\Memecoins.xlsx",
+    "file_type": ".xlsx",
+    "file_hash": "eb6e1d072de472b8b2b193732f42a6ec01f6a19d4decd52171f1cb66b9ad66f9",
+    "processed_at": "2026-02-22T18:52:42.131612",
+    "status": "SUCCESS",
+    "error_message": null,
+    "extracted": {},
+    "extracted_raw": {}
+  },
+  "3c21b024-cd92-42f8-8608-23d2f9841ae8": {
+    "doc_id": "3c21b024-cd92-42f8-8608-23d2f9841ae8",
+    "file_path": "C:\\Users\\Acer\\Documents\\Extra files\\NFConnections НАП Въпросник.docx",
+    "file_type": ".docx",
+    "file_hash": "b6255e5ec9d96d50aede2d06f0f9b7d6368f9c8701dbc7ade392e6fdb3dfc570",
+    "processed_at": "2026-02-22T18:52:42.136615",
+    "status": "SUCCESS",
+    "error_message": null,
+    "extracted": {},
+    "extracted_raw": {}
+  },
+  "0496060e-0db3-4e9d-ad06-083ae28c3860": {
+    "doc_id": "0496060e-0db3-4e9d-ad06-083ae28c3860",
+    "file_path": "C:\\Users\\Acer\\Documents\\Extra files\\nova.xlsx",
+    "file_type": ".xlsx",
+    "file_hash": "cec2665aabb1b3086bb415a8eb97a925d0dc77fabe22ec8d6ee903acc647c9b6",
+    "processed_at": "2026-02-22T18:52:42.139615",
+    "status": "SUCCESS",
+    "error_message": null,
+    "extracted": {},
+    "extracted_raw": {}
+  },
+  "2f03731d-cfcb-43ff-8ed5-545b1fe45ec0": {
+    "doc_id": "2f03731d-cfcb-43ff-8ed5-545b1fe45ec0",
+    "file_path": "C:\\Users\\Acer\\Documents\\Extra files\\Passes.xlsx",
+    "file_type": ".xlsx",
+    "file_hash": "d2b636d10b8798cfc7dd1edeadfcc83f75ad9a3ed3992d4aa76703f74f1a63d9",
+    "processed_at": "2026-02-22T18:52:42.141616",
+    "status": "SUCCESS",
+    "error_message": null,
+    "extracted": {},
+    "extracted_raw": {}
+  },
+  "1ac73dd3-de7d-4aa5-952a-190e299b1468": {
+    "doc_id": "1ac73dd3-de7d-4aa5-952a-190e299b1468",
+    "file_path": "C:\\Users\\Acer\\Documents\\Extra files\\To Do_s.xlsx",
+    "file_type": ".xlsx",
+    "file_hash": "f56fd49e3d9d53e19b7047631160e6fa3b2df843705d87c4a0951f67ee68b7b3",
+    "processed_at": "2026-02-22T18:52:42.143616",
+    "status": "SUCCESS",
+    "error_message": null,
+    "extracted": {},
+    "extracted_raw": {}
+  }
+}

@@ -1,9 +1,10 @@
-# Week 3 – Automated Document Ingestion (Senior Project)
+# Automated Document Ingestion & Extraction System
 # Python 3.11+
 
-# API (minimal for Week 3)
+# API
 fastapi>=0.109.0
 uvicorn[standard]>=0.27.0
+jinja2>=3.0.0
 
 # PDF
 pypdf>=4.0.0

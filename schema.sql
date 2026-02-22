@@ -8,7 +8,8 @@ CREATE TABLE IF NOT EXISTS documents (
     file_hash TEXT NOT NULL,
     file_type TEXT NOT NULL,
     processed_at TEXT,
-    status TEXT NOT NULL DEFAULT 'pending'
+    status TEXT NOT NULL,
+    error_message TEXT
 );
 
 -- User-defined extraction rules (regex + optional anchors)

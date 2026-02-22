@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules - Document Ingestion</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { color: #333; }
+        nav { margin: 1.5rem 0; }
+        nav a { margin-right: 1rem; color: #0066cc; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { border: 1px solid #ddd; padding: 0.5rem; text-align: left; }
+        th { background: #f0f0f0; }
+        button { padding: 0.3rem 0.6rem; margin: 0 0.2rem; font-size: 0.85rem; }
+        .btn-danger { background: #c00; }
+        .btn-danger:hover { background: #a00; }
+        .form-row { margin: 0.5rem 0; }
+        .form-row label { display: inline-block; width: 120px; }
+    </style>
+</head>
+<body>
+    <h1>Extraction Rules</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/rules-page">Rules</a>
+        <a href="/results-page">Results</a>
+        <a href="/logs-page">Logs</a>
+    </nav>
+
+    <h2>Create Rule</h2>
+    <form id="create-form">
+        <div class="form-row"><label>Name:</label> <input name="name" required placeholder="invoice_number"></div>
+        <div class="form-row"><label>Regex:</label> <input name="regex_pattern" required placeholder="INV-\d{4}-\d{3}" style="width: 300px;"></div>
+        <div class="form-row"><label>File type:</label> <input name="file_type" placeholder=".txt (optional)"></div>
+        <div class="form-row"><label>Required:</label> <input type="checkbox" name="required"></div>
+        <button type="submit">Create</button>
+    </form>
+
+    <h2>Rules List</h2>
+    <table id="rules-table">
+        <thead><tr><th>ID</th><th>Name</th><th>Pattern</th><th>File Type</th><th>Required</th><th>Active</th><th>Actions</th></tr></thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        async function loadRules() {
+            const res = await fetch('/rules');
+            const rules = await res.json();
+            const tbody = document.querySelector('#rules-table tbody');
+            tbody.innerHTML = rules.map(r => `
+                <tr>
+                    <td>${r.id}</td>
+                    <td>${r.name}</td>
+                    <td><code>${r.regex_pattern}</code></td>
+                    <td>${r.file_type || '-'}</td>
+                    <td>${r.required ? 'Yes' : 'No'}</td>
+                    <td>${r.active ? 'Yes' : 'No'}</td>
+                    <td>
+                        <button onclick="toggle(${r.id})">Toggle</button>
+                        <button class="btn-danger" onclick="del(${r.id})">Delete</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+        async function toggle(id) {
+            await fetch(`/rules/${id}/toggle`, { method: 'POST' });
+            loadRules();
+        }
+        async function del(id) {
+            if (!confirm('Delete rule?')) return;
+            await fetch(`/rules/${id}`, { method: 'DELETE' });
+            loadRules();
+        }
+        document.getElementById('create-form').onsubmit = async (e) => {
+            e.preventDefault();
+            const fd = new FormData(e.target);
+            await fetch('/rules', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: fd.get('name'),
+                    regex_pattern: fd.get('regex_pattern'),
+                    file_type: fd.get('file_type') || null,
+                    required: fd.get('required') === 'on'
+                })
+            });
+            e.target.reset();
+            loadRules();
+        };
+        loadRules();
+    </script>
+</body>
+</html>
