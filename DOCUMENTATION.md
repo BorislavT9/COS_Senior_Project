@@ -5,7 +5,7 @@
 **Version:** 2.0  
 **Author:** BorislavT9  
 **Repository:** https://github.com/BorislavT9/COS_Senior_Project  
-**Last Updated:** 2024
+**Last Updated:** January 2025
 
 ---
 
@@ -29,17 +29,27 @@
 
 ## Project Overview
 
-### Purpose
+### Problem Statement
 
-This senior project implements an **automated document ingestion and user-defined information extraction system** with a focus on **algorithm-focused data structures**. The system scans documents (PDF, DOCX, TXT, XLSX), extracts text, applies user-defined extraction rules (regex patterns with optional anchors), and stores results using efficient in-memory data structures with JSON-based persistence.
+The problem addressed is efficient storage and retrieval of structured information extracted from unstructured documents. Traditional relational database approaches require table scans for queries, resulting in O(n) complexity. This project investigates whether self-balancing binary search trees (AVL trees) can provide O(log n) query performance for field-based lookups while maintaining deterministic normalization for consistent indexing.
 
-### Key Design Principles
+### Approach
 
-1. **Algorithm-Focused**: Uses AVL trees for O(log n) indexing operations
-2. **Non-Relational Storage**: JSON-based persistence without SQLite dependency for primary workflow
-3. **Deterministic Normalization**: Consistent value processing for reliable indexing
-4. **Interactive Interface**: User-friendly menu system with search history
-5. **Extensible**: Modular design allowing easy addition of new parsers and rules
+The system processes documents through a pipeline: (1) file scanning and hash-based deduplication, (2) text extraction via format-specific parsers (PDF, DOCX, TXT, XLSX), (3) rule-based extraction using regex patterns with optional anchors, (4) deterministic normalization of extracted values, and (5) storage in in-memory data structures with JSON persistence.
+
+### Data Structures
+
+The primary data structure is an **ExtractionStore** composed of:
+- **DocumentStore**: Dictionary mapping document IDs to DocumentRecord objects (O(1) lookup)
+- **FieldIndex**: Dictionary mapping field names to AVL tree instances, where each AVL tree is keyed by normalized extracted values and maps to sets of document IDs (O(log n) search/insert)
+
+### Output
+
+The system produces:
+- Normalized extracted field values indexed in AVL trees
+- Query results for exact match, range queries, and sorted value listing
+- JSON-serialized storage files for persistence
+- HTML reports summarizing extraction results
 
 ### Technology Stack
 
@@ -144,7 +154,7 @@ This senior project implements an **automated document ingestion and user-define
 - **Directory Input**: Search any directory
 - **Keyword Search**: Find any keyword/symbol in files
 - **Search History**: View all previous searches
-- **Statistics Panel**: Real-time statistics display
+- **Statistics Display**: Aggregate counts of documents and searches
 
 ### 5. Search History
 
@@ -246,7 +256,7 @@ python -m src.main
 **Option 2: Show Previously Searched Files**
 
 - Displays all past searches
-- Shows statistics panel
+- Shows aggregate statistics
 - Includes timestamps and results
 
 **Option 3: Exit**
@@ -351,6 +361,16 @@ items = tree.inorder_items()
 Balance factor = height(left) - height(right)
 - Must be in [-1, 0, 1] for balanced tree
 - Violations trigger rotations
+
+### Why AVL Trees?
+
+AVL trees were selected as the indexing data structure for three primary reasons:
+
+1. **Guaranteed O(log n) Complexity**: Unlike unbalanced binary search trees, AVL trees maintain balance through rotations, ensuring O(log n) insertion and search operations regardless of insertion order. This provides predictable performance characteristics for field value indexing.
+
+2. **Sorted Traversal and Range Queries**: The inorder traversal property of AVL trees enables efficient sorted value listing (O(n)) and lexicographic range queries (O(log n + k) where k is the number of results). This supports queries such as "find all documents where invoice_number is between 'INV-1000' and 'INV-2000'."
+
+3. **Algorithmic Design Beyond CRUD**: The implementation demonstrates understanding of fundamental data structures and algorithms beyond simple database CRUD operations. The self-balancing mechanism, rotation algorithms, and tree traversal patterns showcase algorithmic design principles that are not present in relational database indexing abstractions.
 
 ### ExtractionStore
 
@@ -632,6 +652,20 @@ Gets overall statistics.
 - `get_data_store_dir()`: Returns data store directory
 - `get_search_history_path()`: Returns search history file path
 
+### Storage Architecture
+
+The system uses a **dual-storage approach**:
+
+1. **Extracted Information Storage (Non-Relational)**: All extracted document data and field indexes are stored in JSON files within `data_store/`:
+   - `store.json`: Serialized DocumentRecord objects
+   - `index_<field>.json`: Inorder traversal of AVL tree for each field
+   - `search_history.json`: Search operation history
+   - This is the **primary storage** for all extraction results and queries
+
+2. **Rules Storage (SQLite - Legacy)**: Extraction rules (regex patterns, anchors, validation constraints) are stored in SQLite (`data/app.db`) for rule CRUD operations only. Rules are loaded from SQLite during ingestion but extracted information is never written back to SQLite. The SQLite database serves solely as a rule management system, not as storage for extracted data.
+
+**Rationale**: This separation allows the core extraction and query functionality to operate independently of relational database constraints while maintaining rule management capabilities through SQLite's CRUD interface.
+
 ### Environment Variables
 
 Currently, all configuration is file-based. Future versions may support environment variables.
@@ -696,9 +730,9 @@ Tests use temporary directories and mock data to ensure isolation and reproducib
 
 ### Scalability
 
-- **Small datasets** (< 1,000 docs): Excellent performance
-- **Medium datasets** (1,000 - 100,000 docs): Good performance
-- **Large datasets** (> 100,000 docs): May require optimization
+- **Small datasets** (< 1,000 docs): O(log n) operations maintain low latency
+- **Medium datasets** (1,000 - 100,000 docs): Logarithmic complexity scales well
+- **Large datasets** (> 100,000 docs): May require optimization for memory usage
 
 ### Optimization Opportunities
 
@@ -871,7 +905,7 @@ This project is part of a senior project/coursework. Please refer to the reposit
 
 ## Acknowledgments
 
-- Python community for excellent libraries
+- Python community for open-source libraries
 - FastAPI for web framework
 - All contributors and testers
 
