@@ -1,0 +1,115 @@
+cmake_minimum_required(VERSION 3.16)
+project(document_ingestion LANGUAGES C CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+
+include(FetchContent)
+
+# nlohmann/json
+FetchContent_Declare(nlohmann_json
+  GIT_REPOSITORY https://github.com/nlohmann/json.git
+  GIT_TAG v3.11.3)
+FetchContent_MakeAvailable(nlohmann_json)
+
+# SQLite3 - try vcpkg/system first, else FetchContent
+find_package(unofficial-sqlite3 CONFIG QUIET)
+if(unofficial-sqlite3_FOUND)
+  set(SQLite3_LIB unofficial-sqlite3::sqlite3)
+else()
+  find_package(SQLite3 QUIET)
+  if(SQLite3_FOUND)
+    set(SQLite3_LIB SQLite::SQLite3)
+  else()
+    FetchContent_Declare(sqlite_amalgamation
+      URL https://www.sqlite.org/2024/sqlite-amalgamation-3460100.zip
+      DOWNLOAD_EXTRACT_TIMESTAMP TRUE)
+    FetchContent_Populate(sqlite_amalgamation)
+    file(GLOB SQLITE_SOURCES "${sqlite_amalgamation_SOURCE_DIR}/*/sqlite3.c"
+                            "${sqlite_amalgamation_SOURCE_DIR}/sqlite3.c")
+    list(GET SQLITE_SOURCES 0 SQLITE_C_FILE)
+    get_filename_component(SQLITE_DIR ${SQLITE_C_FILE} DIRECTORY)
+    add_library(sqlite3_embedded STATIC ${SQLITE_C_FILE})
+    target_include_directories(sqlite3_embedded PUBLIC ${SQLITE_DIR})
+    set(SQLite3_LIB sqlite3_embedded)
+  endif()
+endif()
+
+# pugixml
+FetchContent_Declare(pugixml
+  GIT_REPOSITORY https://github.com/zeux/pugixml.git
+  GIT_TAG v1.14)
+FetchContent_MakeAvailable(pugixml)
+
+# cpp-httplib (header only)
+FetchContent_Declare(cpp-httplib
+  GIT_REPOSITORY https://github.com/yhirose/cpp-httplib.git
+  GIT_TAG v0.14.3)
+FetchContent_Populate(cpp-httplib)
+
+# Optional Poppler for PDF
+option(ENABLE_PDF "Enable PDF via Poppler" OFF)
+if(ENABLE_PDF)
+  find_package(Poppler QUIET)
+endif()
+
+# miniz for DOCX/XLSX (ZIP)
+set(MINIZ_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third_party/miniz)
+if(EXISTS ${MINIZ_DIR}/miniz.c)
+  add_library(miniz STATIC
+    ${MINIZ_DIR}/miniz.c
+    ${MINIZ_DIR}/miniz_zip.c
+    ${MINIZ_DIR}/miniz_tinfl.c
+    ${MINIZ_DIR}/miniz_tdef.c
+  )
+  target_include_directories(miniz PUBLIC ${MINIZ_DIR})
+  if(MSVC)
+    target_compile_definitions(miniz PRIVATE _CRT_SECURE_NO_WARNINGS)
+  endif()
+else()
+  message(FATAL_ERROR "miniz not found at ${MINIZ_DIR}")
+endif()
+
+add_executable(document_ingestion
+  src/main.cpp
+  src/config.cpp
+  src/store/avl_tree.cpp
+  src/store/store.cpp
+  src/store/models.cpp
+  src/store/search_history.cpp
+  src/scanner/scanner.cpp
+  src/scanner/registry.cpp
+  src/parsers/factory.cpp
+  src/parsers/txt_parser.cpp
+  src/parsers/pdf_parser.cpp
+  src/parsers/docx_parser.cpp
+  src/parsers/xlsx_parser.cpp
+  src/rules/models.cpp
+  src/rules/engine.cpp
+  src/validation/normalizer.cpp
+  src/validation/validator.cpp
+  src/db/database.cpp
+  src/db/rules_repo.cpp
+  src/db/logs_repo.cpp
+  src/services/ingestion_service.cpp
+  src/services/report_service.cpp
+  src/services/keyword_search_service.cpp
+  src/logging/logger.cpp
+)
+
+target_include_directories(document_ingestion PRIVATE
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/third_party
+  ${cpp-httplib_SOURCE_DIR}
+)
+
+target_link_libraries(document_ingestion PRIVATE
+  nlohmann_json::nlohmann_json
+  ${SQLite3_LIB}
+  pugixml::pugixml
+  miniz
+)
+
+if(ENABLE_PDF AND Poppler_FOUND)
+  target_compile_definitions(document_ingestion PRIVATE ENABLE_POPPLER=1)
+  target_link_libraries(document_ingestion PRIVATE Poppler::poppler)
+endif()

@@ -1,11 +1,33 @@
 [
   {
-    "search_id": "10499275-9fd9-46eb-bb55-9fa68454b439",
-    "file_type": ".xlsx",
-    "directory": "C:\\Users\\Acer\\Documents\\Extra files",
-    "keyword": "wallet",
-    "timestamp": "2026-02-22T18:52:42.151752",
-    "files_found": 1,
-    "files_stored": 8
+    "directory": "C:\\Users\\bobi9\\Documents",
+    "file_type": "ALL",
+    "files_found": 5,
+    "files_stored": 0,
+    "found_files": [
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\ENG\\Rough Draft.docx",
+        "matches": 69
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\HTY\\Discussion2.docx",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\AUTHORS.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\AUTHORS.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project ex\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\AUTHORS.txt",
+        "matches": 2
+      }
+    ],
+    "keyword": "Victor",
+    "search_id": "dbfd1163-d58d-4140-8f02-cb475f9e11f7",
+    "timestamp": "2026-03-13T20:50:27"
   }
 ]

@@ -1,914 +1,263 @@
-# Complete Project Documentation
+# Document Search & Extraction System — Full Documentation
 
-## Automated Document Ingestion and User-Defined Information Extraction System
+## 1. Overview
 
-**Version:** 2.0  
-**Author:** BorislavT9  
-**Repository:** https://github.com/BorislavT9/COS_Senior_Project  
-**Last Updated:** January 2025
+This system is an **automated document ingestion and user-defined information extraction system** implemented in C++17. It provides:
 
----
-
-## Table of Contents
-
-1. [Project Overview](#project-overview)
-2. [System Architecture](#system-architecture)
-3. [Core Features](#core-features)
-4. [Installation & Setup](#installation--setup)
-5. [Usage Guide](#usage-guide)
-6. [Data Structures & Algorithms](#data-structures--algorithms)
-7. [File Structure](#file-structure)
-8. [API Reference](#api-reference)
-9. [Configuration](#configuration)
-10. [Testing](#testing)
-11. [Performance Characteristics](#performance-characteristics)
-12. [Troubleshooting](#troubleshooting)
-13. [Future Enhancements](#future-enhancements)
+- **Keyword search** — Search directories for documents containing a keyword; results are saved to history.
+- **Rule-based extraction** — Extract structured data (e.g., invoice numbers, dates) from documents using regex rules.
+- **AVL tree indexing** — O(log n) lookups and range queries on extracted fields.
+- **Search history** — Persistent record of all keyword searches with file paths and match counts.
 
 ---
 
-## Project Overview
+## 2. System Components
 
-### Problem Statement
-
-The problem addressed is efficient storage and retrieval of structured information extracted from unstructured documents. Traditional relational database approaches require table scans for queries, resulting in O(n) complexity. This project investigates whether self-balancing binary search trees (AVL trees) can provide O(log n) query performance for field-based lookups while maintaining deterministic normalization for consistent indexing.
-
-### Approach
-
-The system processes documents through a pipeline: (1) file scanning and hash-based deduplication, (2) text extraction via format-specific parsers (PDF, DOCX, TXT, XLSX), (3) rule-based extraction using regex patterns with optional anchors, (4) deterministic normalization of extracted values, and (5) storage in in-memory data structures with JSON persistence.
-
-### Data Structures
-
-The primary data structure is an **ExtractionStore** composed of:
-- **DocumentStore**: Dictionary mapping document IDs to DocumentRecord objects (O(1) lookup)
-- **FieldIndex**: Dictionary mapping field names to AVL tree instances, where each AVL tree is keyed by normalized extracted values and maps to sets of document IDs (O(log n) search/insert)
-
-### Output
-
-The system produces:
-- Normalized extracted field values indexed in AVL trees
-- Query results for exact match, range queries, and sorted value listing
-- JSON-serialized storage files for persistence
-- HTML reports summarizing extraction results
-
-### Technology Stack
-
-- **Language:** Python 3.11+
-- **Data Structures:** AVL Trees, Python dicts
-- **Persistence:** JSON files
-- **Parsers:** pypdf (PDF), python-docx (DOCX), openpyxl (XLSX)
-- **Web Framework:** FastAPI (optional UI)
-- **Testing:** pytest
-- **CLI:** argparse with interactive menu
-
----
-
-## System Architecture
-
-### High-Level Architecture
+### 2.1 Directory Structure
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    User Interface Layer                     │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │ Interactive  │  │   CLI Commands│  │  Web UI (opt)│     │
-│  │    Menu      │  │               │  │             │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-└─────────────────────────────────────────────────────────────┘
-                            │
-┌─────────────────────────────────────────────────────────────┐
-│                    Service Layer                           │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │  Ingestion   │  │   Keyword    │  │    Report    │     │
-│  │   Service    │  │    Search    │  │  Generation  │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-└─────────────────────────────────────────────────────────────┘
-                            │
-┌─────────────────────────────────────────────────────────────┐
-│                    Core Storage Layer                       │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │ Extraction  │  │  Search      │  │   AVL Tree   │     │
-│  │    Store    │  │  History      │  │  Indexes     │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-└─────────────────────────────────────────────────────────────┘
-                            │
-┌─────────────────────────────────────────────────────────────┐
-│                    Processing Layer                         │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │   Scanner    │  │   Parsers    │  │   Rules     │     │
-│  │              │  │   (Factory)  │  │   Engine    │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Component Layers
-
-#### 1. User Interface Layer
-- **Interactive Menu**: Menu-driven interface for file search
-- **CLI Commands**: Command-line interface for advanced operations
-- **Web UI**: Optional FastAPI-based web interface
-
-#### 2. Service Layer
-- **Ingestion Service**: Orchestrates document processing pipeline
-- **Keyword Search Service**: Searches for keywords in document content
-- **Report Service**: Generates HTML reports
-
-#### 3. Core Storage Layer
-- **ExtractionStore**: Primary storage with AVL tree indexes
-- **SearchHistory**: Tracks user searches
-- **AVL Tree Indexes**: Self-balancing BST for field value indexing
-
-#### 4. Processing Layer
-- **Scanner**: Discovers and hashes files
-- **Parsers**: Extract text from various file formats
-- **Rules Engine**: Applies regex patterns with anchors
-
----
-
-## Core Features
-
-### 1. Document Ingestion
-
-- **Supported Formats**: PDF, DOCX, TXT, XLSX
-- **Automatic Detection**: File type detection by extension
-- **Hash-Based Deduplication**: Skips unchanged files
-- **Error Handling**: Graceful handling of parse failures
-
-### 2. Rule-Based Extraction
-
-- **Regex Patterns**: Flexible pattern matching
-- **Anchors**: Optional before/after anchors for context
-- **Validation**: Max length, required field checks
-- **Normalization**: Deterministic value normalization
-
-### 3. AVL Tree Indexing
-
-- **Self-Balancing**: Guarantees O(log n) operations
-- **Field Indexing**: Separate index per extraction field
-- **Range Queries**: Efficient lexicographic range searches
-- **Sorted Traversal**: Inorder traversal for sorted output
-
-### 4. Interactive Menu System
-
-- **File Type Selection**: Choose PDF, DOCX, TXT, XLSX, or All
-- **Directory Input**: Search any directory
-- **Keyword Search**: Find any keyword/symbol in files
-- **Search History**: View all previous searches
-- **Statistics Display**: Aggregate counts of documents and searches
-
-### 5. Search History
-
-- **Persistent Storage**: JSON-based history file
-- **Search Tracking**: Records all search parameters
-- **Statistics Aggregation**: Cumulative statistics across searches
-- **Timestamp Tracking**: Full audit trail
-
-### 6. Query Operations
-
-- **Exact Match**: O(log n) exact value lookup
-- **Range Query**: O(log n + k) range searches
-- **List Values**: O(n) sorted value listing
-- **Keyword Search**: Full-text keyword search
-
----
-
-## Installation & Setup
-
-### Prerequisites
-
-- Python 3.11 or higher
-- Windows 10/11 (or compatible OS)
-- PowerShell or Command Prompt
-- Internet connection (for initial package installation)
-
-### Step-by-Step Installation
-
-#### 1. Clone Repository
-
-```powershell
-git clone https://github.com/BorislavT9/COS_Senior_Project.git
-cd COS_Senior_Project
-```
-
-#### 2. Create Virtual Environment
-
-```powershell
-python -m venv .venv
-```
-
-#### 3. Activate Virtual Environment
-
-**Windows PowerShell:**
-```powershell
-.venv\Scripts\activate
-```
-
-**Windows Command Prompt:**
-```cmd
-.venv\Scripts\activate.bat
-```
-
-#### 4. Install Dependencies
-
-```powershell
-pip install -r requirements.txt
-```
-
-#### 5. Initialize Database (Optional)
-
-```powershell
-python -m src.main --demo
-```
-
-This creates sample rules and initializes the database.
-
-### Verification
-
-Test the installation:
-
-```powershell
-python -m src.main --help
-```
-
-You should see the help menu.
-
----
-
-## Usage Guide
-
-### Interactive Menu (Recommended)
-
-#### Starting the Program
-
-```powershell
-python -m src.main
-```
-
-#### Menu Options
-
-**Option 1: Search for New Files**
-
-1. Select file type (1-5)
-2. Enter directory path
-3. Enter keyword to search
-4. View results and statistics
-
-**Option 2: Show Previously Searched Files**
-
-- Displays all past searches
-- Shows aggregate statistics
-- Includes timestamps and results
-
-**Option 3: Exit**
-
-- Quits the program
-
-### Command-Line Interface
-
-#### Ingest Documents
-
-```powershell
-# Default directory (sample_docs)
-python -m src.main ingest
-
-# Custom directory
-python -m src.main ingest --watch_dir "C:\path\to\documents"
-```
-
-#### Query Extracted Data
-
-```powershell
-# Exact match
-python -m src.main query --field "invoice_number" --equals "INV-1234-567"
-
-# Range query
-python -m src.main query --field "invoice_number" --range "INV-1000" "INV-2000"
-```
-
-#### List Field Values
-
-```powershell
-python -m src.main list --field "invoice_number"
-```
-
-#### Export Data
-
-```powershell
-# JSON export
-python -m src.main export --format json --out "export.json"
-
-# CSV export
-python -m src.main export --format csv --out "export.csv"
-```
-
-### Web UI (Optional)
-
-```powershell
-python -m src.main --serve
-```
-
-Then visit: http://127.0.0.1:8000
-
----
-
-## Data Structures & Algorithms
-
-### AVL Tree Implementation
-
-#### Overview
-
-The AVL tree is a self-balancing binary search tree that maintains balance through rotations, ensuring O(log n) operations regardless of insertion order.
-
-#### Key Operations
-
-**Insert Operation: O(log n)**
-```python
-tree.insert(key, doc_id)
-```
-- Performs normal BST insert
-- Updates node heights
-- Balances tree using rotations if needed
-
-**Search Operation: O(log n)**
-```python
-doc_ids = tree.search(key)
-```
-- Recursive search through tree
-- Returns set of document IDs
-
-**Range Query: O(log n + k)**
-```python
-doc_ids = tree.range_query(low, high)
-```
-- Traverses tree to find all keys in range
-- k = number of results
-
-**Inorder Traversal: O(n)**
-```python
-items = tree.inorder_items()
-```
-- Returns sorted list of (key, doc_ids) tuples
-
-#### Rotations
-
-**Left Rotation**: Fixes right-heavy subtree
-**Right Rotation**: Fixes left-heavy subtree
-**Left-Right Rotation**: Double rotation for left-right case
-**Right-Left Rotation**: Double rotation for right-left case
-
-#### Balance Factor
-
-Balance factor = height(left) - height(right)
-- Must be in [-1, 0, 1] for balanced tree
-- Violations trigger rotations
-
-### Why AVL Trees?
-
-AVL trees were selected as the indexing data structure for three primary reasons:
-
-1. **Guaranteed O(log n) Complexity**: Unlike unbalanced binary search trees, AVL trees maintain balance through rotations, ensuring O(log n) insertion and search operations regardless of insertion order. This provides predictable performance characteristics for field value indexing.
-
-2. **Sorted Traversal and Range Queries**: The inorder traversal property of AVL trees enables efficient sorted value listing (O(n)) and lexicographic range queries (O(log n + k) where k is the number of results). This supports queries such as "find all documents where invoice_number is between 'INV-1000' and 'INV-2000'."
-
-3. **Algorithmic Design Beyond CRUD**: The implementation demonstrates understanding of fundamental data structures and algorithms beyond simple database CRUD operations. The self-balancing mechanism, rotation algorithms, and tree traversal patterns showcase algorithmic design principles that are not present in relational database indexing abstractions.
-
-### ExtractionStore
-
-#### Structure
-
-```python
-class ExtractionStore:
-    documents: Dict[str, DocumentRecord]  # O(1) lookup
-    indexes: Dict[str, AVLTree]            # O(log n) search
-```
-
-#### Operations
-
-| Operation | Time Complexity | Description |
-|-----------|----------------|-------------|
-| `add_document()` | O(1) | Add document to store |
-| `index_extraction()` | O(log n) | Index field value |
-| `query_equals()` | O(log n + k) | Exact match query |
-| `query_range()` | O(log n + k) | Range query |
-| `list_field_values()` | O(n) | List all values |
-| `save()` | O(n) | Persist to JSON |
-| `load()` | O(n) | Load from JSON |
-
-### Normalization Algorithm
-
-#### Steps
-
-1. **Strip**: Remove leading/trailing whitespace
-2. **Collapse**: Replace multiple whitespace with single space
-3. **Optional Uppercase**: Convert to uppercase (configurable)
-4. **Optional Punctuation Removal**: Remove surrounding punctuation
-
-#### Deterministic Behavior
-
-- Same input always produces same output
-- Critical for consistent indexing
-- Enables reliable lookups
-
----
-
-## File Structure
-
-```
-COS_Senior_Project/
+Senior Project/
+├── CMakeLists.txt              # C++17 build configuration
+├── schema.sql                  # SQLite schema (rules, logs)
+├── build.bat, run.bat          # Build and run scripts
 │
-├── src/                          # Source code
-│   ├── __init__.py
-│   ├── main.py                   # Entry point with interactive menu
-│   ├── config.py                 # Configuration management
-│   │
-│   ├── store/                    # Storage layer
-│   │   ├── __init__.py
-│   │   ├── avl_tree.py          # AVL tree implementation
-│   │   ├── models.py            # Data models (DocumentRecord, etc.)
-│   │   ├── store.py             # ExtractionStore
-│   │   └── search_history.py    # Search history management
-│   │
-│   ├── services/                 # Business logic
-│   │   ├── __init__.py
-│   │   ├── ingestion_service.py # Document ingestion pipeline
-│   │   ├── keyword_search_service.py # Keyword search
-│   │   ├── report_service.py    # HTML report generation
-│   │   └── export_service.py    # Data export
-│   │
-│   ├── parsers/                  # File parsers
-│   │   ├── __init__.py
-│   │   ├── base.py              # Base parser interface
-│   │   ├── factory.py           # Parser factory
-│   │   ├── pdf_parser.py        # PDF parser
-│   │   ├── docx_parser.py       # DOCX parser
-│   │   ├── txt_parser.py        # TXT parser
-│   │   └── xlsx_parser.py        # XLSX parser
-│   │
-│   ├── rules/                    # Extraction rules
-│   │   ├── __init__.py
-│   │   ├── models.py            # Rule models
-│   │   ├── engine.py            # Rule application engine
-│   │   └── repository.py        # Rule repository
-│   │
-│   ├── validation/               # Validation & normalization
-│   │   ├── __init__.py
-│   │   ├── normalizer.py        # Value normalization
-│   │   └── validator.py         # Rule validation
-│   │
-│   ├── scanner/                  # File scanning
-│   │   ├── __init__.py
-│   │   ├── scanner.py            # Directory scanning
-│   │   └── registry.py          # File type registry
-│   │
-│   ├── db/                       # Database layer (legacy)
-│   │   ├── __init__.py
-│   │   ├── database.py          # DB connection
-│   │   ├── documents_repo.py     # Documents repository
-│   │   ├── rules_repo.py        # Rules repository
-│   │   ├── extractions_repo.py  # Extractions repository
-│   │   └── logs_repo.py         # Logs repository
-│   │
-│   ├── ui/                       # Web UI (optional)
-│   │   ├── __init__.py
-│   │   ├── api.py               # FastAPI app
-│   │   ├── routes_*.py           # Route handlers
-│   │   └── templates/           # HTML templates
-│   │
-│   └── logging/                  # Logging
-│       ├── __init__.py
-│       └── logger.py            # Logger setup
+├── include/document_ingestion/ # Public headers
+│   ├── avl_tree.hpp            # AVL tree index
+│   ├── config.hpp              # Paths, project root
+│   ├── database.hpp            # SQLite connection
+│   ├── ingestion_service.hpp   # Scan orchestration
+│   ├── keyword_search_service.hpp
+│   ├── models.hpp              # DocumentRecord, ExtractionResult
+│   ├── parsers.hpp             # Text extraction from files
+│   ├── registry.hpp            # Supported file types
+│   ├── report_service.hpp     # HTML report generation
+│   ├── rule_engine.hpp        # Regex extraction
+│   ├── scanner.hpp            # Directory scanning, hashing
+│   ├── search_history.hpp     # Search history persistence
+│   └── store.hpp              # ExtractionStore
 │
-├── tests/                        # Test suite
-│   ├── test_avl.py              # AVL tree tests
-│   ├── test_store.py            # Store tests
-│   ├── test_ingestion_with_store.py # Integration tests
-│   ├── test_db.py               # Database tests
-│   ├── test_pipeline.py         # Pipeline tests
-│   ├── test_rules.py            # Rules tests
-│   └── test_validation.py       # Validation tests
+├── src/
+│   ├── main.cpp               # CLI entry, interactive menu
+│   ├── config.cpp
+│   ├── db/                    # SQLite, rules repo, logs
+│   ├── logging/               # Logger
+│   ├── parsers/               # TXT, PDF, DOCX, XLSX parsers
+│   ├── rules/                 # Rule engine, models
+│   ├── scanner/               # Directory scan, file hash
+│   ├── services/              # Ingestion, keyword search, report
+│   ├── store/                 # AVL tree, ExtractionStore, SearchHistory
+│   └── validation/             # Normalizer, validator
 │
-├── docs/                         # Documentation
-│   ├── architecture.md          # Architecture documentation
-│   └── diagrams/                # Architecture diagrams
-│
-├── data_store/                   # Runtime data (created at runtime)
-│   ├── store.json               # Document store
-│   ├── index_*.json             # AVL tree indexes
-│   └── search_history.json      # Search history
-│
-├── data/                         # Database files (created at runtime)
-│   └── app.db                   # SQLite database
-│
-├── logs/                         # Log files (created at runtime)
-│   └── app.log                  # Application logs
-│
-├── sample_docs/                  # Sample documents
-│   ├── sample.txt
-│   ├── sample.pdf
-│   ├── sample.docx
-│   └── sample.xlsx
-│
-├── scripts/                      # Utility scripts
-│   └── create_sample_files.py   # Sample file generator
-│
-├── .gitignore                    # Git ignore rules
-├── pytest.ini                   # Pytest configuration
-├── requirements.txt              # Python dependencies
-├── schema.sql                    # Database schema
-│
-├── README.md                     # Project readme
-├── QUICKSTART.md                 # Quick start guide
-├── INTERACTIVE_FEATURES.md       # Interactive features guide
-├── INSTALL_PYTHON.md            # Python installation guide
-└── DOCUMENTATION.md              # This file
+├── docs/                      # Architecture, build guides
+├── sample_docs/               # Sample input files
+├── data_store/                # Runtime output
+│   ├── store.json             # Document records
+│   ├── index_<field>.json     # AVL index per field
+│   ├── search_history.json    # Keyword search history
+│   └── report.html            # HTML report
+├── data/                      # SQLite database (app.db)
+└── third_party/               # miniz, picosha2
 ```
 
+### 2.2 Component Summary
+
+| Component | Role |
+|-----------|------|
+| **Scanner** | Recursively lists files in a directory; computes SHA-256 hash for change detection |
+| **Registry** | Supported extensions: `.pdf`, `.docx`, `.txt`, `.xlsx` |
+| **Parsers** | Extract plain text from each file type (TXT direct, DOCX/XLSX via miniz + pugixml, PDF optional) |
+| **Rule Engine** | Applies regex patterns with optional anchors to extract structured data |
+| **Validation** | Normalizes and validates extracted values (length, required, etc.) |
+| **Store** | ExtractionStore: documents map + AVL tree indexes per field |
+| **Search History** | Persists keyword searches and found files to `search_history.json` |
+| **Services** | Ingestion (`run_scan`), keyword search, HTML report generation |
+
 ---
 
-## API Reference
+## 3. Interactive Menu
 
-### Main Entry Point
+Running `.\run.bat` (or the executable with no arguments) starts the interactive menu:
 
-#### `src.main.main()`
+### Option 1: Search for new files
 
-Main entry point that handles command-line arguments and interactive menu.
+1. Enter a directory path to search (e.g., `C:\Users\...\Documents`).
+2. Enter a keyword (e.g., `Victor`).
+3. The system scans all supported files in the directory and its subdirectories.
+4. Each file containing the keyword is displayed with its path and match count.
+5. **All found files are saved** to `data_store/search_history.json`.
+6. Optionally, the system ingests the directory and applies extraction rules.
 
-**Usage:**
-```python
-python -m src.main [command] [options]
+### Option 2: Show previously searched files
+
+- Displays **all previously found files** with:
+  - Full file path
+  - The keyword that was searched
+  - Match count for that file
+
+Example output:
+
+```
+--- Previously searched files ---
+  C:\Users\bobi9\Documents\ENG\Rough Draft.docx
+    Keyword: "Victor" (69 matches)
+  C:\Users\bobi9\Documents\HTY\Discussion2.docx
+    Keyword: "Victor" (1 matches)
 ```
 
-### ExtractionStore API
+### Option 3: Exit
 
-#### `ExtractionStore()`
-
-Creates a new extraction store instance.
-
-#### `add_document(record: DocumentRecord) -> None`
-
-Adds a document record to the store.
-
-**Time Complexity:** O(1)
-
-#### `index_extraction(field: str, value: str, doc_id: str) -> None`
-
-Indexes an extracted field value.
-
-**Time Complexity:** O(log n)
-
-#### `query_equals(field: str, value: str) -> List[DocumentRecord]`
-
-Finds all documents where field equals value.
-
-**Time Complexity:** O(log n + k)
-
-#### `query_range(field: str, low: str, high: str) -> List[DocumentRecord]`
-
-Finds all documents where field value is in range [low, high].
-
-**Time Complexity:** O(log n + k)
-
-#### `list_field_values(field: str) -> List[str]`
-
-Lists all unique normalized values for a field, sorted.
-
-**Time Complexity:** O(n)
-
-#### `save(base_dir: Path) -> None`
-
-Persists store to JSON files.
-
-#### `load(base_dir: Path) -> None`
-
-Loads store from JSON files and rebuilds AVL trees.
-
-### AVLTree API
-
-#### `AVLTree()`
-
-Creates a new AVL tree instance.
-
-#### `insert(key: str, doc_id: str) -> None`
-
-Inserts a key-value pair into the tree.
-
-**Time Complexity:** O(log n)
-
-#### `search(key: str) -> Set[str]`
-
-Searches for a key and returns document IDs.
-
-**Time Complexity:** O(log n)
-
-#### `range_query(low: str, high: str) -> Set[str]`
-
-Finds all document IDs for keys in range [low, high].
-
-**Time Complexity:** O(log n + k)
-
-#### `inorder_items() -> List[Tuple[str, List[str]]]`
-
-Gets all items in sorted order (inorder traversal).
-
-**Time Complexity:** O(n)
-
-### SearchHistory API
-
-#### `SearchHistory(history_file: Path)`
-
-Creates a search history manager.
-
-#### `add_search(file_type: str, directory: str, keyword: str, files_found: int, files_stored: int) -> SearchRecord`
-
-Adds a new search record.
-
-#### `get_all_searches() -> List[SearchRecord]`
-
-Gets all search records, most recent first.
-
-#### `get_statistics() -> Dict[str, int]`
-
-Gets overall statistics.
+Exits the program.
 
 ---
 
-## Configuration
+## 4. Search History
 
-### Configuration File: `src/config.py`
+### 4.1 Storage
 
-#### Paths
+- **File**: `data_store/search_history.json`
+- **Format**: JSON array of search records
 
-- `WATCH_DIR`: Default watch directory ("./sample_docs")
-- `DB_PATH`: Database file path ("./data/app.db")
-- `LOG_PATH`: Log file path ("./logs/app.log")
-- `DATA_STORE_DIR`: Data store directory ("./data_store")
+### 4.2 Data Model
 
-#### Functions
+Each search record (`SearchRecord`) contains:
 
-- `ensure_dirs()`: Creates necessary directories
-- `get_watch_dir()`: Returns watch directory path
-- `get_db_path()`: Returns database path
-- `get_log_path()`: Returns log file path
-- `get_data_store_dir()`: Returns data store directory
-- `get_search_history_path()`: Returns search history file path
+| Field | Description |
+|-------|-------------|
+| `search_id` | Unique UUID |
+| `file_type` | e.g., "ALL" |
+| `directory` | Directory that was searched |
+| `keyword` | Search term |
+| `timestamp` | ISO timestamp |
+| `files_found` | Count of files that matched |
+| `files_stored` | Count ingested into ExtractionStore |
+| `found_files` | List of `{file_path, matches}` for each found file |
 
-### Storage Architecture
+### 4.3 API
 
-The system uses a **dual-storage approach**:
-
-1. **Extracted Information Storage (Non-Relational)**: All extracted document data and field indexes are stored in JSON files within `data_store/`:
-   - `store.json`: Serialized DocumentRecord objects
-   - `index_<field>.json`: Inorder traversal of AVL tree for each field
-   - `search_history.json`: Search operation history
-   - This is the **primary storage** for all extraction results and queries
-
-2. **Rules Storage (SQLite - Legacy)**: Extraction rules (regex patterns, anchors, validation constraints) are stored in SQLite (`data/app.db`) for rule CRUD operations only. Rules are loaded from SQLite during ingestion but extracted information is never written back to SQLite. The SQLite database serves solely as a rule management system, not as storage for extracted data.
-
-**Rationale**: This separation allows the core extraction and query functionality to operate independently of relational database constraints while maintaining rule management capabilities through SQLite's CRUD interface.
-
-### Environment Variables
-
-Currently, all configuration is file-based. Future versions may support environment variables.
+- `add_search(file_type, directory, keyword, found_files, files_stored)` — Appends a new search and saves to disk.
+- `get_all_searches()` — Returns all searches, sorted by timestamp (newest first).
+- `get_statistics()` — Returns totals for searches and files found/stored.
 
 ---
 
-## Testing
+## 5. Ingestion and Extraction
 
-### Running Tests
+### 5.1 Flow
+
+1. **Scan** — `scan_directory()` recursively lists all files.
+2. **Filter** — Keep only supported extensions (`.pdf`, `.docx`, `.txt`, `.xlsx`).
+3. **Change detection** — Compute SHA-256 hash; skip if path+hash already in store.
+4. **Parse** — Extract plain text from each file.
+5. **Load rules** — Active rules from SQLite (`data/app.db`).
+6. **Extract** — Apply regex with optional `anchor_before`/`anchor_after`.
+7. **Validate** — Normalize and validate each extraction.
+8. **Store** — Add document to ExtractionStore; index each field in AVL tree.
+9. **Save** — Persist to `store.json` and `index_<field>.json`.
+10. **Report** — Generate `report.html`.
+
+### 5.2 CLI Commands
 
 ```powershell
-# Run all tests
-pytest tests\ -v
+# Ingest documents (default: sample_docs)
+.\run.bat ingest
+.\run.bat ingest --watch_dir "C:\path\to\documents"
 
-# Run specific test file
-pytest tests\test_avl.py -v
+# Query extracted data
+.\run.bat query --field "invoice_number" --equals "INV-2024-001"
+.\run.bat query --field "invoice_number" --range "INV-1000" "INV-2000"
+.\run.bat list --field "invoice_number"
 
-# Run with coverage
-pytest tests\ --cov=src --cov-report=html
+# Export to JSON or CSV
+.\run.bat export --format json --out "export.json"
+.\run.bat export --format csv --out "export.csv"
+
+# Demo: create sample rules and scan
+.\run.bat --demo
 ```
 
-### Test Coverage
+---
 
-#### Unit Tests
+## 6. Data Structures
 
-- **test_avl.py**: AVL tree operations and balancing
-- **test_store.py**: Store operations and persistence
-- **test_validation.py**: Normalization and validation
-- **test_rules.py**: Rule engine functionality
+### 6.1 ExtractionStore
 
-#### Integration Tests
+- **Documents**: `unordered_map<doc_id, DocumentRecord>` — O(1) lookup.
+- **Indexes**: `map<field_name, AVLTree>` — O(log n) for exact and range queries.
 
-- **test_ingestion_with_store.py**: End-to-end ingestion
-- **test_pipeline.py**: Full pipeline testing
-- **test_db.py**: Database operations
+### 6.2 AVL Tree
 
-### Test Data
+- Self-balancing binary search tree.
+- Key: normalized extracted value.
+- Value: set of document IDs.
+- Operations: insert (O(log n)), search (O(log n)), range query (O(log n + k)).
 
-Tests use temporary directories and mock data to ensure isolation and reproducibility.
+### 6.3 Persistence
+
+| Data | File | Format |
+|------|------|--------|
+| Documents | `data_store/store.json` | JSON |
+| Field indexes | `data_store/index_<field>.json` | JSON (inorder) |
+| Search history | `data_store/search_history.json` | JSON |
+| Rules | `data/app.db` | SQLite |
+| Logs | `data/app.db` | SQLite |
 
 ---
 
-## Performance Characteristics
+## 7. Keyword Search
 
-### Time Complexity Summary
+### 7.1 Process
 
-| Operation | Complexity | Notes |
-|-----------|------------|-------|
-| Insert document | O(1) | Dict insertion |
-| Index extraction | O(log n) | AVL insert per field |
-| Exact query | O(log n) | AVL search |
-| Range query | O(log n + k) | k = number of results |
-| List values | O(n) | Inorder traversal |
-| Save/Load | O(n) | Serialize all data |
-| Keyword search | O(n × m) | n = files, m = avg file size |
+1. `search_keyword_in_directory(directory, keyword)` scans the directory.
+2. For each supported file: parse to text, count case-insensitive substring matches.
+3. Returns `KeywordSearchResult` for each file: `{file_path, matches, status}`.
+4. Files with `matches > 0` are passed to `history.add_search()`.
+5. Search history is saved immediately.
 
-### Space Complexity
+### 7.2 Supported File Types
 
-- **DocumentStore**: O(d) where d = number of documents
-- **FieldIndex**: O(v) where v = unique values per field
-- **Total**: O(d + Σv) across all fields
-
-### Scalability
-
-- **Small datasets** (< 1,000 docs): O(log n) operations maintain low latency
-- **Medium datasets** (1,000 - 100,000 docs): Logarithmic complexity scales well
-- **Large datasets** (> 100,000 docs): May require optimization for memory usage
-
-### Optimization Opportunities
-
-1. **Batch Operations**: Group multiple inserts
-2. **Lazy Loading**: Load indexes on demand
-3. **Compression**: Compress JSON files
-4. **Caching**: Cache frequently accessed data
+- TXT, DOCX, XLSX (full support)
+- PDF (optional, requires Poppler)
 
 ---
 
-## Troubleshooting
+## 8. Configuration
 
-### Common Issues
+- **Project root** — Set from executable path; contains `CMakeLists.txt` or `schema.sql`.
+- **Paths** (relative to project root):
+  - `data_store/` — Store, indexes, search history, report
+  - `data/` — SQLite database
+  - `sample_docs/` — Default watch directory
+  - `logs/` — Application logs
 
-#### Python Not Found
+---
 
-**Problem:** `Python was not found`
+## 9. Build and Run
 
-**Solution:**
-1. Install Python from https://www.python.org/downloads/
-2. Ensure "Add Python to PATH" is checked during installation
-3. Restart terminal after installation
+### Build
 
-#### Import Errors
-
-**Problem:** `ModuleNotFoundError` or `ImportError`
-
-**Solution:**
-1. Activate virtual environment: `.venv\Scripts\activate`
-2. Install dependencies: `pip install -r requirements.txt`
-3. Verify installation: `pip list`
-
-#### No Rules Found
-
-**Problem:** Ingestion completes but no extractions
-
-**Solution:**
-1. Create rules via web UI: `python -m src.main --serve`
-2. Or use demo mode: `python -m src.main --demo`
-3. Verify rules are active in database
-
-#### Store Not Loading
-
-**Problem:** `data_store/store.json` not found
-
-**Solution:**
-- This is normal on first run
-- Store will be created after first ingestion
-- Ensure `data_store/` directory exists
-
-#### Database Errors
-
-**Problem:** SQLite database errors
-
-**Solution:**
-1. Delete `data/app.db` to recreate
-2. Run: `python -m src.main` (initializes DB)
-3. Check file permissions
-
-### Debug Mode
-
-Enable verbose logging:
-
-```python
-# In src/logging/logger.py
-LOG.setLevel(logging.DEBUG)
+```powershell
+cd "c:\Users\bobi9\Documents\Senior Project"
+.\build.bat
+# or: cmake -B build; cmake --build build --config Release
 ```
 
-### Getting Help
+### Run
 
-1. Check logs: `logs/app.log`
-2. Review error messages in console
-3. Verify file paths and permissions
-4. Check GitHub issues: https://github.com/BorislavT9/COS_Senior_Project/issues
-
----
-
-## Future Enhancements
-
-### Planned Features
-
-1. **Multi-threading**: Parallel document processing
-2. **Incremental Updates**: Update indexes without full rebuild
-3. **Compression**: Compress JSON storage files
-4. **Advanced Queries**: Full-text search, fuzzy matching
-5. **Export Formats**: Additional export formats (XML, Excel)
-6. **Web UI Enhancements**: Real-time updates, better visualization
-7. **Rule Templates**: Pre-built rule templates
-8. **Batch Operations**: Process multiple directories
-9. **Scheduled Scans**: Automatic periodic scanning
-10. **API Endpoints**: RESTful API for external integration
-
-### Performance Improvements
-
-1. **Index Optimization**: B-tree variants for better cache performance
-2. **Memory Mapping**: Memory-mapped files for large datasets
-3. **Query Optimization**: Query planning and optimization
-4. **Caching Layer**: Redis/Memcached integration
-
-### Code Quality
-
-1. **Type Hints**: Complete type annotations
-2. **Documentation**: Comprehensive docstrings
-3. **Code Coverage**: Increase test coverage to 90%+
-4. **Linting**: Strict linting rules (pylint, mypy)
+```powershell
+.\run.bat                    # Interactive menu
+.\run.bat --demo             # Create rules, scan sample_docs
+.\run.bat ingest             # Ingest default directory
+.\run.bat query --field ...  # Query extracted data
+```
 
 ---
 
-## Contributing
+## 10. Dependencies
 
-### Development Setup
-
-1. Fork the repository
-2. Create a feature branch
-3. Make changes
-4. Add tests
-5. Run test suite
-6. Submit pull request
-
-### Code Style
-
-- Follow PEP 8
-- Use type hints
-- Write docstrings
-- Keep functions focused
-
-### Testing Requirements
-
-- All new features must include tests
-- Maintain >80% code coverage
-- Tests must pass before PR
-
----
-
-## License
-
-This project is part of a senior project/coursework. Please refer to the repository for license information.
-
----
-
-## Contact & Support
-
-- **GitHub:** https://github.com/BorislavT9/COS_Senior_Project
-- **Issues:** https://github.com/BorislavT9/COS_Senior_Project/issues
-- **Author:** BorislavT9
-
----
-
-## Changelog
-
-### Version 2.0 (Current)
-
-- ✅ AVL tree indexing implementation
-- ✅ Interactive menu system
-- ✅ Search history persistence
-- ✅ Keyword search functionality
-- ✅ JSON-based non-relational storage
-- ✅ Comprehensive test suite
-- ✅ Enhanced documentation
-
-### Version 1.0 (Initial)
-
-- Basic document ingestion
-- SQLite-based storage
-- Rule-based extraction
-- Web UI
-- Basic CLI
-
----
-
-## Acknowledgments
-
-- Python community for open-source libraries
-- FastAPI for web framework
-- All contributors and testers
-
----
-
-**End of Documentation**
+- **C++17** compiler (MSVC 2019+, GCC 9+, Clang 10+)
+- **CMake** 3.16+
+- **SQLite** — FetchContent or vcpkg
+- **nlohmann/json** — JSON
+- **pugixml** — XML (DOCX, XLSX)
+- **miniz** — ZIP (DOCX, XLSX)
+- **PicoSHA2** — SHA-256 hashing

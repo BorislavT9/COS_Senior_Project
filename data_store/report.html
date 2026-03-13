@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Extraction Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .summary {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .status-success {
+            color: green;
+            font-weight: bold;
+        }
+        .status-failed {
+            color: red;
+            font-weight: bold;
+        }
+        .extracted-values {
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document Extraction Report</h1>
+    <div class="summary">
+        <h2>Summary</h2>
+        <p><strong>Total Documents:</strong> 12</p>
+        <p><strong>Indexed Fields:</strong> date_field, invoice_number</p>
+        <p><strong>Recent Documents Shown:</strong> 12</p>
+    </div>
+    <h2>Recent Extractions</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>File Path</th>
+                <th>File Type</th>
+                <th>Status</th>
+                <th>Processed At</th>
+                <th>Extracted Fields</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>C:\Senior Project\sample_docs\sample.txt</td>
+                <td>.txt</td>
+                <td class="status-success">SUCCESS</td>
+                <td>2026-02-22T19:14:09.176999</td>
+                <td class="extracted-values">invoice_number: INV-2024-001, date_field: 2024-01-15</td>
+            </tr>
+            <tr>
+                <td>C:\Senior Project\sample_docs\sample.xlsx</td>
+                <td>.xlsx</td>
+                <td class="status-success">SUCCESS</td>
+                <td>2026-02-22T19:14:09.176999</td>
+                <td class="extracted-values">None</td>
+            </tr>
+            <tr>
+                <td>C:\Senior Project\sample_docs\sample.pdf</td>
+                <td>.pdf</td>
+                <td class="status-success">SUCCESS</td>
+                <td>2026-02-22T19:14:09.175998</td>
+                <td class="extracted-values">None</td>
+            </tr>
+            <tr>
+                <td>C:\Senior Project\sample_docs\sample.docx</td>
+                <td>.docx</td>
+                <td class="status-success">SUCCESS</td>
+                <td>2026-02-22T19:14:09.167978</td>
+                <td class="extracted-values">None</td>
+            </tr>
+            <tr>
+                <td>C:\Users\Acer\Documents\Extra files\To Do_s.xlsx</td>
+                <td>.xlsx</td>
+                <td class="status-success">SUCCESS</td>
+                <td>2026-02-22T18:52:42.143616</td>
+                <td class="extracted-values">None</td>
+            </tr>
+            <tr>
+                <td>C:\Users\Acer\Documents\Extra files\Passes.xlsx</td>
+                <td>.xlsx</td>
+                <td class="status-success">SUCCESS</td>
+                <td>2026-02-22T18:52:42.141616</td>
+                <td class="extracted-values">None</td>
+            </tr>
+            <tr>
+                <td>C:\Users\Acer\Documents\Extra files\nova.xlsx</td>
+                <td>.xlsx</td>
+                <td class="status-success">SUCCESS</td>
+                <td>2026-02-22T18:52:42.139615</td>
+                <td class="extracted-values">None</td>
+            </tr>
+            <tr>
+                <td>C:\Users\Acer\Documents\Extra files\NFConnections НАП Въпросник.docx</td>
+                <td>.docx</td>
+                <td class="status-success">SUCCESS</td>
+                <td>2026-02-22T18:52:42.136615</td>
+                <td class="extracted-values">None</td>
+            </tr>
+            <tr>
+                <td>C:\Users\Acer\Documents\Extra files\Memecoins.xlsx</td>
+                <td>.xlsx</td>
+                <td class="status-success">SUCCESS</td>
+                <td>2026-02-22T18:52:42.131612</td>
+                <td class="extracted-values">None</td>
+            </tr>
+            <tr>
+                <td>C:\Users\Acer\Documents\Extra files\CV_Borislav_Todorov_2025.docx</td>
+                <td>.docx</td>
+                <td class="status-success">SUCCESS</td>
+                <td>2026-02-22T18:52:42.119610</td>
+                <td class="extracted-values">None</td>
+            </tr>
+            <tr>
+                <td>C:\Users\Acer\Documents\Extra files\AUBG.xlsx</td>
+                <td>.xlsx</td>
+                <td class="status-success">SUCCESS</td>
+                <td>2026-02-22T18:52:42.116214</td>
+                <td class="extracted-values">None</td>
+            </tr>
+            <tr>
+                <td>C:\Users\Acer\Documents\Extra files\Anti-gpt0.docx</td>
+                <td>.docx</td>
+                <td class="status-success">SUCCESS</td>
+                <td>2026-02-22T18:52:42.112216</td>
+                <td class="extracted-values">None</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
