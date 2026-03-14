@@ -139,3 +139,27 @@ add_executable(test_integration tests/test_integration.cpp
 target_include_directories(test_integration PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(test_integration PRIVATE GTest::gtest_main nlohmann_json::nlohmann_json)
 add_test(NAME IntegrationTests COMMAND test_integration)
+
+add_executable(test_pipeline tests/test_pipeline.cpp
+  src/config.cpp
+  src/store/avl_tree.cpp src/store/store.cpp src/store/models.cpp
+  src/scanner/scanner.cpp src/scanner/registry.cpp
+  src/parsers/factory.cpp src/parsers/txt_parser.cpp src/parsers/pdf_parser.cpp
+  src/parsers/docx_parser.cpp src/parsers/xlsx_parser.cpp
+  src/rules/models.cpp src/rules/engine.cpp
+  src/validation/normalizer.cpp src/validation/validator.cpp
+  src/db/database.cpp src/db/rules_repo.cpp src/db/logs_repo.cpp
+  src/services/ingestion_service.cpp
+)
+target_include_directories(test_pipeline PRIVATE
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/third_party
+)
+target_link_libraries(test_pipeline PRIVATE
+  GTest::gtest_main
+  nlohmann_json::nlohmann_json
+  ${SQLite3_LIB}
+  pugixml::pugixml
+  miniz
+)
+add_test(NAME PipelineTests COMMAND test_pipeline)
