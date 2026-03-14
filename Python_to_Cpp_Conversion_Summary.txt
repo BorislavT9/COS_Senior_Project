@@ -1,0 +1,107 @@
+================================================================================
+PYTHON TO C++ CONVERSION — SUMMARY
+Document Search and Extraction System
+================================================================================
+
+OVERVIEW
+--------
+The project originally started as a Python prototype in the early weeks of the 
+semester. It was later fully rewritten in C++17 to better align with COS Senior 
+Project expectations: explicit implementation of algorithms, low-level parsing, 
+and substantive programming effort.
+
+
+THE PYTHON VERSION (BEFORE)
+---------------------------
+• Language: Python 3
+• Core modules:
+  - Scanner: os.walk (or equivalent) for directory traversal, SHA-256 hashing
+  - Parsers: TXT, DOCX, XLSX, PDF via python-docx, pypdf, openpyxl
+  - Rule engine: Regex with anchor_before / anchor_after
+  - Validation: Normalizer, validator
+  - Store: In-memory AVL tree indexes (Python implementation)
+  - Search history: Persisted to JSON
+
+• Features:
+  - Recursive directory scan
+  - Keyword search across documents
+  - Rule-based extraction from SQLite
+  - AVL tree indexing for O(log n) queries
+  - Flask-based web UI (rules, scan results, logs)
+  - pytest test suite (AVL, store, rules, validation, ingestion pipeline)
+
+• Dependencies: requirements.txt (python-docx, pypdf, openpyxl, Flask, etc.)
+
+• Why it was redesigned:
+  - COS guidelines discourage Python for many projects due to off-the-shelf 
+    libraries that simplify the solution
+  - python-docx, openpyxl abstract away DOCX/XLSX structure (ZIP + XML)
+  - Guidelines de-emphasize web front-ends in favor of core CS problems
+  - Advisor recommended C++ for stronger algorithmic demonstration
+
+
+THE C++ VERSION (AFTER)
+-----------------------
+• Language: C++17
+• Build: CMake 3.16+, build.bat, run.bat
+• Core modules (same architecture, different implementation):
+  - Scanner: std::filesystem::recursive_directory_iterator, PicoSHA2
+  - Parsers: TXT (direct), DOCX/XLSX via miniz (ZIP) + pugixml (XML), PDF optional (Poppler)
+  - Rule engine: std::regex with anchors
+  - Validation: Normalizer, validator (C++)
+  - Store: ExtractionStore with AVL trees (C++ implementation)
+  - Search history: search_history.json with found_files (paths + match counts)
+
+• Dependencies: nlohmann/json, pugixml, miniz, PicoSHA2, SQLite (FetchContent/vcpkg)
+  - No high-level document libraries; ZIP and XML parsed directly
+
+• Web UI: Removed. Primary interface is CLI + interactive menu.
+
+• Tests: Python pytest suite removed. C++ automated tests not in repository.
+
+
+CONVERSION SCOPE
+----------------
+All core logic was rewritten:
+- src/scanner/     — scanner.cpp, registry.cpp
+- src/parsers/     — factory, txt, docx, xlsx, pdf parsers
+- src/rules/       — engine.cpp, models.cpp
+- src/validation/  — normalizer.cpp, validator.cpp
+- src/store/       — avl_tree.cpp, store.cpp, models.cpp, search_history.cpp
+- src/services/    — ingestion_service, keyword_search_service, report_service
+- src/db/          — database, rules_repo, logs_repo
+- src/main.cpp     — CLI, interactive menu
+
+Deleted: src/*.py, tests/test_*.py, src/ui/ (Flask), requirements.txt, pytest.ini
+
+
+KEY DIFFERENCES
+---------------
+| Aspect          | Python                        | C++                               |
+|----------------|-------------------------------|-----------------------------------|
+| Parsing        | python-docx, openpyxl, pypdf  | miniz + pugixml (low-level)       |
+| Hashing        | hashlib or similar            | PicoSHA2                          |
+| AVL tree       | Python classes                | C++ unique_ptr, manual memory     |
+| Persistence    | JSON (similar)                | JSON (same format)                |
+| Interface      | Flask web UI + CLI            | CLI + interactive menu only       |
+| Tests          | pytest suite                  | Removed during conversion         |
+| Build          | pip install, python -m        | CMake, build.bat, run.bat         |
+
+
+OUTCOME
+-------
+The C++ version preserves all core functionality:
+- Keyword search with persistent history (paths + keywords saved)
+- Ingestion with hash-based change detection
+- Rule-based extraction with anchors
+- AVL tree indexing (O(log n) exact, O(log n + k) range)
+- CLI: ingest, query, list, export
+- Interactive menu: search, show previous searches, exit
+
+The conversion demonstrates:
+- Explicit algorithm implementation (AVL trees)
+- Low-level file format handling (ZIP, XML)
+- Substantive C++ programming effort
+- Better alignment with COS Senior Project rubric
+
+================================================================================
