@@ -29,6 +29,9 @@ class AVLTree {
   std::vector<std::pair<std::string, std::vector<std::string>>> inorder_items() const;
   size_t size() const { return size_; }
 
+  /** For testing: verifies AVL invariant (|balance_factor| <= 1) at every node. */
+  bool check_avl_invariant() const;
+
  private:
   std::unique_ptr<AVLNode> root_;
   size_t size_ = 0;
@@ -47,6 +50,7 @@ class AVLTree {
                              std::set<std::string>& result) const;
   void inorder_recursive(const AVLNode* node,
                          std::vector<std::pair<std::string, std::vector<std::string>>>& result) const;
+  bool check_avl_invariant_recursive(const AVLNode* node) const;
 };
 
 }  // namespace document_ingestion

@@ -127,4 +127,16 @@ std::vector<std::pair<std::string, std::vector<std::string>>> AVLTree::inorder_i
   return result;
 }
 
+bool AVLTree::check_avl_invariant_recursive(const AVLNode* node) const {
+  if (!node) return true;
+  int bf = balance_factor(node);
+  if (bf < -1 || bf > 1) return false;
+  return check_avl_invariant_recursive(node->left.get()) &&
+         check_avl_invariant_recursive(node->right.get());
+}
+
+bool AVLTree::check_avl_invariant() const {
+  return check_avl_invariant_recursive(root_.get());
+}
+
 }  // namespace document_ingestion

@@ -113,3 +113,29 @@ if(ENABLE_PDF AND Poppler_FOUND)
   target_compile_definitions(document_ingestion PRIVATE ENABLE_POPPLER=1)
   target_link_libraries(document_ingestion PRIVATE Poppler::poppler)
 endif()
+
+# Google Test
+FetchContent_Declare(googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG v1.14.0)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+
+add_executable(test_avl_tree tests/test_avl_tree.cpp src/store/avl_tree.cpp)
+target_include_directories(test_avl_tree PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(test_avl_tree PRIVATE GTest::gtest_main)
+add_test(NAME AVLTreeTests COMMAND test_avl_tree)
+
+add_executable(test_rule_engine tests/test_rule_engine.cpp
+  src/rules/engine.cpp src/rules/models.cpp src/validation/normalizer.cpp)
+target_include_directories(test_rule_engine PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(test_rule_engine PRIVATE GTest::gtest_main)
+add_test(NAME RuleEngineTests COMMAND test_rule_engine)
+
+add_executable(test_integration tests/test_integration.cpp
+  src/store/avl_tree.cpp src/store/store.cpp src/store/models.cpp)
+target_include_directories(test_integration PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(test_integration PRIVATE GTest::gtest_main nlohmann_json::nlohmann_json)
+add_test(NAME IntegrationTests COMMAND test_integration)
