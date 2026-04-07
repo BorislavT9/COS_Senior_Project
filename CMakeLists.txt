@@ -69,8 +69,7 @@ else()
   message(FATAL_ERROR "miniz not found at ${MINIZ_DIR}")
 endif()
 
-add_executable(document_ingestion
-  src/main.cpp
+set(DOC_INGESTION_CORE_SOURCES
   src/config.cpp
   src/store/avl_tree.cpp
   src/store/store.cpp
@@ -96,13 +95,13 @@ add_executable(document_ingestion
   src/logging/logger.cpp
 )
 
-target_include_directories(document_ingestion PRIVATE
+add_library(doc_ingestion_core STATIC ${DOC_INGESTION_CORE_SOURCES})
+target_include_directories(doc_ingestion_core PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${CMAKE_CURRENT_SOURCE_DIR}/third_party
   ${cpp-httplib_SOURCE_DIR}
 )
-
-target_link_libraries(document_ingestion PRIVATE
+target_link_libraries(doc_ingestion_core PUBLIC
   nlohmann_json::nlohmann_json
   ${SQLite3_LIB}
   pugixml::pugixml
@@ -110,8 +109,22 @@ target_link_libraries(document_ingestion PRIVATE
 )
 
 if(ENABLE_PDF AND Poppler_FOUND)
-  target_compile_definitions(document_ingestion PRIVATE ENABLE_POPPLER=1)
-  target_link_libraries(document_ingestion PRIVATE Poppler::poppler)
+  target_compile_definitions(doc_ingestion_core PUBLIC ENABLE_POPPLER=1)
+  target_link_libraries(doc_ingestion_core PUBLIC Poppler::poppler)
+endif()
+
+add_executable(document_ingestion src/main.cpp)
+target_link_libraries(document_ingestion PRIVATE doc_ingestion_core)
+
+if(WIN32)
+  option(BUILD_GUI "Build Win32 desktop GUI (document_ingestion_gui.exe)" ON)
+  if(BUILD_GUI)
+    add_executable(document_ingestion_gui WIN32 src/gui/win32_app.cpp src/gui/app.manifest)
+    target_link_libraries(document_ingestion_gui PRIVATE doc_ingestion_core comctl32)
+    if(MSVC)
+      target_compile_options(document_ingestion_gui PRIVATE /utf-8)
+    endif()
+  endif()
 endif()
 
 # Google Test

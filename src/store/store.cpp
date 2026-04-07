@@ -1,6 +1,7 @@
 #include "document_ingestion/store.hpp"
 #include <nlohmann/json.hpp>
 #include <fstream>
+#include <sstream>
 #include <regex>
 #include <algorithm>
 
@@ -86,24 +87,33 @@ void ExtractionStore::load(const std::filesystem::path& base_dir) {
   auto store_path = base_dir / "store.json";
   if (std::filesystem::exists(store_path)) {
     std::ifstream f(store_path);
-    auto docs = nlohmann::json::parse(f);
-    for (auto it = docs.begin(); it != docs.end(); ++it) {
-      DocumentRecord rec;
-      rec.doc_id = it.value()["doc_id"];
-      rec.file_path = it.value()["file_path"];
-      rec.file_type = it.value()["file_type"];
-      rec.file_hash = it.value()["file_hash"];
-      rec.processed_at = it.value()["processed_at"];
-      rec.status = it.value()["status"];
-      if (it.value().contains("error_message") && !it.value()["error_message"].is_null())
-        rec.error_message = it.value()["error_message"].get<std::string>();
-      if (it.value().contains("extracted"))
-        for (auto& [k, v] : it.value()["extracted"].items())
-          rec.extracted[k] = v.get<std::string>();
-      if (it.value().contains("extracted_raw"))
-        for (auto& [k, v] : it.value()["extracted_raw"].items())
-          rec.extracted_raw[k] = v.get<std::string>();
-      documents_[rec.doc_id] = std::move(rec);
+    std::stringstream buffer;
+    buffer << f.rdbuf();
+    std::string raw = buffer.str();
+    if (!raw.empty()) {
+      try {
+        auto docs = nlohmann::json::parse(raw);
+        for (auto it = docs.begin(); it != docs.end(); ++it) {
+          DocumentRecord rec;
+          rec.doc_id = it.value()["doc_id"];
+          rec.file_path = it.value()["file_path"];
+          rec.file_type = it.value()["file_type"];
+          rec.file_hash = it.value()["file_hash"];
+          rec.processed_at = it.value()["processed_at"];
+          rec.status = it.value()["status"];
+          if (it.value().contains("error_message") && !it.value()["error_message"].is_null())
+            rec.error_message = it.value()["error_message"].get<std::string>();
+          if (it.value().contains("extracted"))
+            for (auto& [k, v] : it.value()["extracted"].items())
+              rec.extracted[k] = v.get<std::string>();
+          if (it.value().contains("extracted_raw"))
+            for (auto& [k, v] : it.value()["extracted_raw"].items())
+              rec.extracted_raw[k] = v.get<std::string>();
+          documents_[rec.doc_id] = std::move(rec);
+        }
+      } catch (...) {
+        // Corrupt or non-JSON store.json: start fresh for documents; index_*.json may still load below
+      }
     }
   }
   for (const auto& entry : std::filesystem::directory_iterator(base_dir)) {
