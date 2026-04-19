@@ -40,7 +40,6 @@ Senior Project/
 │   ├── main.cpp               # CLI entry, interactive menu
 │   ├── config.cpp
 │   ├── db/                    # SQLite, rules repo, logs
-│   ├── logging/               # Logger
 │   ├── parsers/               # TXT, PDF, DOCX, XLSX parsers
 │   ├── rules/                 # Rule engine, models
 │   ├── scanner/               # Directory scan, file hash

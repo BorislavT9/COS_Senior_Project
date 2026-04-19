@@ -52,10 +52,6 @@ std::filesystem::path get_db_path() {
   return get_project_root() / "data" / "app.db";
 }
 
-std::filesystem::path get_log_path() {
-  return get_project_root() / "logs" / "app.log";
-}
-
 std::filesystem::path get_schema_path() {
   return get_project_root() / "schema.sql";
 }

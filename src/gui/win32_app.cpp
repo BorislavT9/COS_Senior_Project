@@ -11,7 +11,6 @@
 #include <windowsx.h>
 #include <commctrl.h>
 #include "document_ingestion/config.hpp"
-#include "document_ingestion/logger.hpp"
 #include "document_ingestion/search_history.hpp"
 #include "document_ingestion/keyword_search_service.hpp"
 #include "document_ingestion/ingestion_service.hpp"
@@ -823,7 +822,6 @@ int APIENTRY wWinMain(HINSTANCE hInst, HINSTANCE, LPWSTR, int show) {
   GetModuleFileNameA(nullptr, exe_path, static_cast<DWORD>(sizeof(exe_path)));
   document_ingestion::init_project_root_from_exe(exe_path);
   document_ingestion::ensure_dirs();
-  document_ingestion::set_default_log_path(document_ingestion::get_log_path().string());
   try {
     document_ingestion::init_db(document_ingestion::get_db_path().string(),
                                 document_ingestion::get_schema_path().string());

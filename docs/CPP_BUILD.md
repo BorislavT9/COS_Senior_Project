@@ -38,7 +38,7 @@ cmake -B build
 cmake --build build --config Release
 ```
 
-The first configure will download SQLite amalgamation, nlohmann/json, pugixml, and cpp-httplib.
+The first configure may download SQLite amalgamation, nlohmann/json, and pugixml.
 
 ## Run
 
@@ -77,7 +77,6 @@ src/                           # C++ sources
   validation/  # Normalizer, validator
   db/          # SQLite, rules repo, logs
   services/    # Ingestion, report, keyword search
-  logging/     # Logger
 third_party/   # miniz, picosha2
 ```
 
@@ -85,7 +84,6 @@ third_party/   # miniz, picosha2
 
 - **nlohmann/json** – JSON
 - **pugixml** – XML parsing (DOCX, XLSX)
-- **cpp-httplib** – HTTP server (for future web UI)
 - **SQLite** – find_package or FetchContent
 - **miniz** – ZIP (DOCX, XLSX are ZIP files)
 - **PicoSHA2** – SHA-256 hashing

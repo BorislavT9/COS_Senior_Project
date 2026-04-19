@@ -40,12 +40,6 @@ FetchContent_Declare(pugixml
   GIT_TAG v1.14)
 FetchContent_MakeAvailable(pugixml)
 
-# cpp-httplib (header only)
-FetchContent_Declare(cpp-httplib
-  GIT_REPOSITORY https://github.com/yhirose/cpp-httplib.git
-  GIT_TAG v0.14.3)
-FetchContent_Populate(cpp-httplib)
-
 # Optional Poppler for PDF
 option(ENABLE_PDF "Enable PDF via Poppler" OFF)
 if(ENABLE_PDF)
@@ -92,14 +86,12 @@ set(DOC_INGESTION_CORE_SOURCES
   src/services/ingestion_service.cpp
   src/services/report_service.cpp
   src/services/keyword_search_service.cpp
-  src/logging/logger.cpp
 )
 
 add_library(doc_ingestion_core STATIC ${DOC_INGESTION_CORE_SOURCES})
 target_include_directories(doc_ingestion_core PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${CMAKE_CURRENT_SOURCE_DIR}/third_party
-  ${cpp-httplib_SOURCE_DIR}
 )
 target_link_libraries(doc_ingestion_core PUBLIC
   nlohmann_json::nlohmann_json

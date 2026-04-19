@@ -26,7 +26,7 @@ This senior project implements an **automated document ingestion and user-define
   CPP_BUILD.md
 /include/document_ingestion/   # C++ headers
 /src                          # C++ sources
-  store/, scanner/, parsers/, rules/, validation/, db/, services/, logging/
+  store/, scanner/, parsers/, rules/, validation/, db/, services/
 /third_party
   miniz/, picosha2.h
 /sample_docs                  # Sample documents to ingest
@@ -52,7 +52,7 @@ cmake -B build
 cmake --build build --config Release
 ```
 
-*(First build downloads SQLite, nlohmann/json, pugixml, cpp-httplib.)*
+*(First build may download SQLite amalgamation, nlohmann/json, and pugixml.)*
 
 ### 2. Run
 

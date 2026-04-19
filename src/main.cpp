@@ -6,7 +6,6 @@
 #include "document_ingestion/keyword_search_service.hpp"
 #include "document_ingestion/database.hpp"
 #include "document_ingestion/rules_repo.hpp"
-#include "document_ingestion/logger.hpp"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -210,17 +209,15 @@ static void interactive_menu() {
 int main(int argc, char* argv[]) {
   document_ingestion::init_project_root_from_exe(argc > 0 ? argv[0] : nullptr);
   document_ingestion::ensure_dirs();
-  document_ingestion::set_default_log_path(document_ingestion::get_log_path().string());
 
   std::string cmd, watch_dir, field, equals, range_low, range_high, format, out_path;
-  bool serve = false, demo = false;
+  bool demo = false;
   for (int i = 1; i < argc; ++i) {
     std::string arg = argv[i];
     if (arg == "ingest") cmd = "ingest";
     else if (arg == "query") cmd = "query";
     else if (arg == "list") cmd = "list";
     else if (arg == "export") cmd = "export";
-    else if (arg == "--serve") serve = true;
     else if (arg == "--demo") demo = true;
     else if (arg == "--watch_dir" && i + 1 < argc) watch_dir = argv[++i];
     else if (arg == "--field" && i + 1 < argc) field = argv[++i];
@@ -231,10 +228,6 @@ int main(int argc, char* argv[]) {
   }
 
   if (demo) { run_demo(); return 0; }
-  if (serve) {
-    std::cout << "Web UI: run with Python for now (python -m src.main --serve)\n";
-    return 0;
-  }
   if (cmd == "ingest") {
     if (watch_dir.empty()) watch_dir = document_ingestion::get_watch_dir().string();
     cmd_ingest(watch_dir);

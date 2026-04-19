@@ -1515,5 +1515,48 @@
     "keyword": "@",
     "search_id": "74a7f82b-0f9d-4c35-9c06-677eedcca043",
     "timestamp": "2026-04-19T03:58:36"
+  },
+  {
+    "directory": "C:\\Users\\bobi9\\Documents\\Senior Project",
+    "file_type": "ALL",
+    "files_found": 8,
+    "files_stored": 1,
+    "found_files": [
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\setuptools-65.5.0.dist-info\\entry_points.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\LICENSES\\GPL-3.0-only.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Diploma_Thesis_FINAL_v5.docx",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Midterm_Report.docx",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Progress Report 10.docx",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Progress Report 7.docx",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Weekly Report 7.docx",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Weekly Report 9.docx",
+        "matches": 4
+      }
+    ],
+    "keyword": "final",
+    "search_id": "77463135-fbde-400d-a127-fdb44db9d844",
+    "timestamp": "2026-04-19T04:19:10"
   }
 ]
