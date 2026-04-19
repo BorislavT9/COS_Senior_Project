@@ -29,5 +29,1491 @@
     "keyword": "Victor",
     "search_id": "dbfd1163-d58d-4140-8f02-cb475f9e11f7",
     "timestamp": "2026-03-13T20:50:27"
+  },
+  {
+    "directory": "C:\\Users\\bobi9\\Documents\\ENG",
+    "file_type": "ALL",
+    "files_found": 2,
+    "files_stored": 0,
+    "found_files": [
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\ENG\\Impressions on Chapters 6 and 7.docx",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\ENG\\Notes on Trace Elements.docx",
+        "matches": 3
+      }
+    ],
+    "keyword": "narrative",
+    "search_id": "c475ceaf-ba2b-48c7-8fcd-57e2603e2fbc",
+    "timestamp": "2026-04-06T12:59:31"
+  },
+  {
+    "directory": "C:\\Users\\bobi9\\Documents\\HTY",
+    "file_type": "ALL",
+    "files_found": 1,
+    "files_stored": 3,
+    "found_files": [
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\HTY\\Disscusion_ArchivesInADigitialWorld.docx",
+        "matches": 1
+      }
+    ],
+    "keyword": "meta data",
+    "search_id": "82341f49-9bd3-435e-8dcb-c1993bf477fb",
+    "timestamp": "2026-04-06T13:07:10"
+  },
+  {
+    "directory": "C:\\Users\\bobi9\\Documents\\HTY",
+    "file_type": "ALL",
+    "files_found": 1,
+    "files_stored": 0,
+    "found_files": [
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\HTY\\Disscusion_ArchivesInADigitialWorld.docx",
+        "matches": 1
+      }
+    ],
+    "keyword": "meta data",
+    "search_id": "cd084497-f914-49aa-b479-c113fa937408",
+    "timestamp": "2026-04-06T13:12:03"
+  },
+  {
+    "directory": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\Release",
+    "file_type": "ALL",
+    "files_found": 0,
+    "files_stored": 0,
+    "found_files": [],
+    "keyword": "test",
+    "search_id": "e68dbb54-6c1c-4924-94d1-3c87d51e929f",
+    "timestamp": "2026-04-19T03:46:02"
+  },
+  {
+    "directory": "C:\\Users\\bobi9\\Documents\\Senior Project",
+    "file_type": "ALL",
+    "files_found": 66,
+    "files_stored": 165,
+    "found_files": [
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\anyio-4.12.1.dist-info\\entry_points.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\readme.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\lxml-6.0.2.dist-info\\licenses\\LICENSES.txt",
+        "matches": 6
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip\\_vendor\\distlib\\LICENSE.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\src\\pip\\_vendor\\distlib\\LICENSE.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\src\\pip\\_vendor\\distlib\\LICENSE.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pytest-9.0.2.dist-info\\entry_points.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pytest-9.0.2.dist-info\\top_level.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\setuptools-65.5.0.dist-info\\entry_points.txt",
+        "matches": 8
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\CMakeCache.txt",
+        "matches": 80
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 30
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\meson_options.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\test\\CMakeLists.txt",
+        "matches": 30
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\test\\fuzzing\\CMakeLists.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeCache.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeFiles\\cpp-httplib-populate.dir\\Labels.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\CMakeLists.txt",
+        "matches": 9
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googlemock\\CMakeLists.txt",
+        "matches": 117
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googlemock\\test\\gmock_output_test_golden.txt",
+        "matches": 67
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googletest\\CMakeLists.txt",
+        "matches": 400
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googletest\\test\\googletest-output-test-golden-lin.txt",
+        "matches": 913
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeCache.txt",
+        "matches": 14
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeFiles\\googletest-populate.dir\\Labels.txt",
+        "matches": 24
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeLists.txt",
+        "matches": 6
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\googletest-populate-prefix\\src\\googletest-populate-stamp\\googletest-populate-gitclone-lastrun.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\googletest-populate-prefix\\src\\googletest-populate-stamp\\googletest-populate-gitinfo.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\googletest-populate-prefix\\src\\googletest-populate-stamp\\googletest-populate-update-info.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\CMakeLists.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\LICENSES\\GPL-3.0-only.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\abi\\CMakeLists.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\abi\\config\\CMakeLists.txt",
+        "matches": 16
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\abi\\diag\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\abi\\inline_ns\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\benchmarks\\CMakeLists.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\CMakeLists.txt",
+        "matches": 81
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_add_subdirectory\\CMakeLists.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_add_subdirectory\\project\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_fetch_content\\CMakeLists.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_fetch_content2\\CMakeLists.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_import\\CMakeLists.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_import_minver\\CMakeLists.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_target_include_directories\\CMakeLists.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\thirdparty\\Fuzzer\\CMakeLists.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\thirdparty\\Fuzzer\\test\\CMakeLists.txt",
+        "matches": 101
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\thirdparty\\Fuzzer\\test\\dict1.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\thirdparty\\Fuzzer\\test\\no-coverage\\CMakeLists.txt",
+        "matches": 16
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\thirdparty\\Fuzzer\\test\\ubsan\\CMakeLists.txt",
+        "matches": 10
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\thirdparty\\Fuzzer\\test\\uninstrumented\\CMakeLists.txt",
+        "matches": 10
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeCache.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeFiles\\nlohmann_json-populate.dir\\Labels.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-src\\CMakeLists.txt",
+        "matches": 16
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeCache.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeFiles\\pugixml-populate.dir\\Labels.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeCache.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeFiles\\sqlite_amalgamation-populate.dir\\Labels.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\CMakeLists.txt",
+        "matches": 46
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\FULL_DESCRIPTION.txt",
+        "matches": 11
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Midterm_Report.docx",
+        "matches": 33
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Python_to_Cpp_Conversion_Summary.txt",
+        "matches": 10
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\third_party\\miniz\\CMakeLists.txt",
+        "matches": 16
+      }
+    ],
+    "keyword": "test",
+    "search_id": "4ef552fa-8827-4c9a-8aa5-f0053aec82cb",
+    "timestamp": "2026-04-19T03:47:05"
+  },
+  {
+    "directory": "C:\\Users\\bobi9\\Documents\\Senior Project",
+    "file_type": "ALL",
+    "files_found": 87,
+    "files_stored": 0,
+    "found_files": [
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\et_xmlfile-2.0.0.dist-info\\top_level.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\h11-0.16.0.dist-info\\licenses\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\readme.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\lxml-6.0.2.dist-info\\licenses\\LICENSES.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip\\_vendor\\dependency_groups\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip\\_vendor\\urllib3\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\LICENSE.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\src\\pip\\_vendor\\cachecontrol\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\src\\pip\\_vendor\\dependency_groups\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\src\\pip\\_vendor\\urllib3\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\LICENSE.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\src\\pip\\_vendor\\cachecontrol\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\src\\pip\\_vendor\\dependency_groups\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\src\\pip\\_vendor\\urllib3\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\watchfiles-1.1.1.dist-info\\entry_points.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\CMakeCache.txt",
+        "matches": 47
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 37
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\CMakeLists.txt",
+        "matches": 17
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\meson_options.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\test\\CMakeLists.txt",
+        "matches": 8
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\test\\fuzzing\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeCache.txt",
+        "matches": 21
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeFiles\\cpp-httplib-populate.dir\\Labels.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\cpp-httplib-populate-prefix\\src\\cpp-httplib-populate-stamp\\cpp-httplib-populate-gitclone-lastrun.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\cpp-httplib-populate-prefix\\src\\cpp-httplib-populate-stamp\\cpp-httplib-populate-gitinfo.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\cpp-httplib-populate-prefix\\src\\cpp-httplib-populate-stamp\\cpp-httplib-populate-patch-info.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\cpp-httplib-populate-prefix\\src\\cpp-httplib-populate-stamp\\cpp-httplib-populate-update-info.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googlemock\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googlemock\\test\\gmock_output_test_golden.txt",
+        "matches": 52
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googletest\\CMakeLists.txt",
+        "matches": 21
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googletest\\test\\googletest-output-test-golden-lin.txt",
+        "matches": 10
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeCache.txt",
+        "matches": 21
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeFiles\\googletest-populate.dir\\Labels.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\googletest-populate-prefix\\src\\googletest-populate-stamp\\googletest-populate-gitclone-lastrun.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\googletest-populate-prefix\\src\\googletest-populate-stamp\\googletest-populate-gitinfo.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\googletest-populate-prefix\\src\\googletest-populate-stamp\\googletest-populate-patch-info.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\googletest-populate-prefix\\src\\googletest-populate-stamp\\googletest-populate-update-info.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\CMakeLists.txt",
+        "matches": 25
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\LICENSES\\Apache-2.0.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\LICENSES\\GPL-3.0-only.txt",
+        "matches": 6
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\LICENSES\\MIT.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\CMakeLists.txt",
+        "matches": 9
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_fetch_content\\project\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_fetch_content2\\project\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\thirdparty\\Fuzzer\\test\\CMakeLists.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeCache.txt",
+        "matches": 21
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeFiles\\nlohmann_json-populate.dir\\Labels.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\nlohmann_json-populate-prefix\\src\\nlohmann_json-populate-stamp\\nlohmann_json-populate-gitclone-lastrun.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\nlohmann_json-populate-prefix\\src\\nlohmann_json-populate-stamp\\nlohmann_json-populate-gitinfo.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\nlohmann_json-populate-prefix\\src\\nlohmann_json-populate-stamp\\nlohmann_json-populate-patch-info.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\nlohmann_json-populate-prefix\\src\\nlohmann_json-populate-stamp\\nlohmann_json-populate-update-info.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-src\\CMakeLists.txt",
+        "matches": 9
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-src\\readme.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeCache.txt",
+        "matches": 21
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeFiles\\pugixml-populate.dir\\Labels.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\pugixml-populate-prefix\\src\\pugixml-populate-stamp\\pugixml-populate-gitclone-lastrun.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\pugixml-populate-prefix\\src\\pugixml-populate-stamp\\pugixml-populate-gitinfo.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\pugixml-populate-prefix\\src\\pugixml-populate-stamp\\pugixml-populate-patch-info.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\pugixml-populate-prefix\\src\\pugixml-populate-stamp\\pugixml-populate-update-info.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeCache.txt",
+        "matches": 21
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeFiles\\sqlite_amalgamation-populate.dir\\Labels.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeLists.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\sqlite_amalgamation-populate-prefix\\src\\sqlite_amalgamation-populate-stamp\\sqlite_amalgamation-populate-patch-info.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\sqlite_amalgamation-populate-prefix\\src\\sqlite_amalgamation-populate-stamp\\sqlite_amalgamation-populate-update-info.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\sqlite_amalgamation-populate-prefix\\src\\sqlite_amalgamation-populate-stamp\\sqlite_amalgamation-populate-urlinfo.txt",
+        "matches": 6
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\CMakeLists.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\FULL_DESCRIPTION.txt",
+        "matches": 170
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Midterm_Report.docx",
+        "matches": 75
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Python_to_Cpp_Conversion_Summary.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\sample_docs\\sample.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\third_party\\miniz\\CMakeLists.txt",
+        "matches": 42
+      }
+    ],
+    "keyword": "file",
+    "search_id": "a8af977a-6406-418c-b0c1-80fbfec1859c",
+    "timestamp": "2026-04-19T03:53:34"
+  },
+  {
+    "directory": "C:\\Users\\bobi9\\Documents\\Senior Project",
+    "file_type": "ALL",
+    "files_found": 90,
+    "files_stored": 7,
+    "found_files": [
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\et_xmlfile-2.0.0.dist-info\\top_level.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\h11-0.16.0.dist-info\\licenses\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\readme.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\lxml-6.0.2.dist-info\\licenses\\LICENSES.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip\\_vendor\\dependency_groups\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip\\_vendor\\urllib3\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\LICENSE.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\src\\pip\\_vendor\\cachecontrol\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\src\\pip\\_vendor\\dependency_groups\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\src\\pip\\_vendor\\urllib3\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\LICENSE.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\src\\pip\\_vendor\\cachecontrol\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\src\\pip\\_vendor\\dependency_groups\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\src\\pip\\_vendor\\urllib3\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\watchfiles-1.1.1.dist-info\\entry_points.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\CMakeCache.txt",
+        "matches": 47
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 37
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\CMakeLists.txt",
+        "matches": 17
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\meson_options.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\test\\CMakeLists.txt",
+        "matches": 8
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\test\\fuzzing\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeCache.txt",
+        "matches": 21
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeFiles\\cpp-httplib-populate.dir\\Labels.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\cpp-httplib-populate-prefix\\src\\cpp-httplib-populate-stamp\\cpp-httplib-populate-gitclone-lastrun.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\cpp-httplib-populate-prefix\\src\\cpp-httplib-populate-stamp\\cpp-httplib-populate-gitinfo.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\cpp-httplib-populate-prefix\\src\\cpp-httplib-populate-stamp\\cpp-httplib-populate-patch-info.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\cpp-httplib-populate-prefix\\src\\cpp-httplib-populate-stamp\\cpp-httplib-populate-update-info.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googlemock\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googlemock\\test\\gmock_output_test_golden.txt",
+        "matches": 52
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googletest\\CMakeLists.txt",
+        "matches": 21
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googletest\\test\\googletest-output-test-golden-lin.txt",
+        "matches": 10
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeCache.txt",
+        "matches": 21
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeFiles\\googletest-populate.dir\\Labels.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\googletest-populate-prefix\\src\\googletest-populate-stamp\\googletest-populate-gitclone-lastrun.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\googletest-populate-prefix\\src\\googletest-populate-stamp\\googletest-populate-gitinfo.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\googletest-populate-prefix\\src\\googletest-populate-stamp\\googletest-populate-patch-info.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\googletest-populate-prefix\\src\\googletest-populate-stamp\\googletest-populate-update-info.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\CMakeLists.txt",
+        "matches": 25
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\LICENSES\\Apache-2.0.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\LICENSES\\GPL-3.0-only.txt",
+        "matches": 6
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\LICENSES\\MIT.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\CMakeLists.txt",
+        "matches": 9
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_fetch_content\\project\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_fetch_content2\\project\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\thirdparty\\Fuzzer\\test\\CMakeLists.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeCache.txt",
+        "matches": 21
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeFiles\\nlohmann_json-populate.dir\\Labels.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\nlohmann_json-populate-prefix\\src\\nlohmann_json-populate-stamp\\nlohmann_json-populate-gitclone-lastrun.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\nlohmann_json-populate-prefix\\src\\nlohmann_json-populate-stamp\\nlohmann_json-populate-gitinfo.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\nlohmann_json-populate-prefix\\src\\nlohmann_json-populate-stamp\\nlohmann_json-populate-patch-info.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\nlohmann_json-populate-prefix\\src\\nlohmann_json-populate-stamp\\nlohmann_json-populate-update-info.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-src\\CMakeLists.txt",
+        "matches": 9
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-src\\readme.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeCache.txt",
+        "matches": 21
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeFiles\\pugixml-populate.dir\\Labels.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\pugixml-populate-prefix\\src\\pugixml-populate-stamp\\pugixml-populate-gitclone-lastrun.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\pugixml-populate-prefix\\src\\pugixml-populate-stamp\\pugixml-populate-gitinfo.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\pugixml-populate-prefix\\src\\pugixml-populate-stamp\\pugixml-populate-patch-info.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\pugixml-populate-prefix\\src\\pugixml-populate-stamp\\pugixml-populate-update-info.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeCache.txt",
+        "matches": 21
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeFiles\\sqlite_amalgamation-populate.dir\\Labels.txt",
+        "matches": 12
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeFiles\\TargetDirectories.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeLists.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\sqlite_amalgamation-populate-prefix\\src\\sqlite_amalgamation-populate-stamp\\sqlite_amalgamation-populate-patch-info.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\sqlite_amalgamation-populate-prefix\\src\\sqlite_amalgamation-populate-stamp\\sqlite_amalgamation-populate-update-info.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\sqlite_amalgamation-populate-prefix\\src\\sqlite_amalgamation-populate-stamp\\sqlite_amalgamation-populate-urlinfo.txt",
+        "matches": 6
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\CMakeLists.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Diploma_Thesis_FINAL_v5.docx",
+        "matches": 217
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\FULL_DESCRIPTION.txt",
+        "matches": 170
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Midterm_Report.docx",
+        "matches": 75
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Python_to_Cpp_Conversion_Summary.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\sample_docs\\sample.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\third_party\\miniz\\CMakeLists.txt",
+        "matches": 42
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Weekly Report 5.docx",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Weekly Report 9.docx",
+        "matches": 2
+      }
+    ],
+    "keyword": "file",
+    "search_id": "30ad5baf-fa31-42d2-b6c1-1259c2a1ef4a",
+    "timestamp": "2026-04-19T03:57:51"
+  },
+  {
+    "directory": "C:\\Users\\bobi9\\Documents\\Senior Project",
+    "file_type": "ALL",
+    "files_found": 88,
+    "files_stored": 0,
+    "found_files": [
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\anyio-4.12.1.dist-info\\entry_points.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\click-8.3.1.dist-info\\licenses\\LICENSE.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\colorama-0.4.6.dist-info\\licenses\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\h11-0.16.0.dist-info\\licenses\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\h11-0.16.0.dist-info\\top_level.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\jinja2-3.1.6.dist-info\\entry_points.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\jinja2-3.1.6.dist-info\\licenses\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\readme.txt",
+        "matches": 10
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\lxml-6.0.2.dist-info\\licenses\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\lxml-6.0.2.dist-info\\licenses\\LICENSES.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\licenses\\LICENSE.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\LICENSE.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip\\_vendor\\distlib\\LICENSE.txt",
+        "matches": 119
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip\\_vendor\\vendor.txt",
+        "matches": 18
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\AUTHORS.txt",
+        "matches": 8
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\src\\pip\\_vendor\\cachecontrol\\LICENSE.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\src\\pip\\_vendor\\distlib\\LICENSE.txt",
+        "matches": 119
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\AUTHORS.txt",
+        "matches": 9
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\src\\pip\\_vendor\\cachecontrol\\LICENSE.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\src\\pip\\_vendor\\distlib\\LICENSE.txt",
+        "matches": 119
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\CMakeCache.txt",
+        "matches": 112
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\CMakeLists.txt",
+        "matches": 13
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\meson_options.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\test\\CMakeLists.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-src\\test\\www\\dir\\1MB.txt",
+        "matches": 103152
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeCache.txt",
+        "matches": 6
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeFiles\\cpp-httplib-populate.dir\\Labels.txt",
+        "matches": 42
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\cpp-httplib-subbuild\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\CMakeLists.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googlemock\\CMakeLists.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googlemock\\test\\gmock_output_test_golden.txt",
+        "matches": 48
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googletest\\CMakeLists.txt",
+        "matches": 20
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googletest\\test\\googletest-output-test-golden-lin.txt",
+        "matches": 259
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeCache.txt",
+        "matches": 6
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeFiles\\googletest-populate.dir\\Labels.txt",
+        "matches": 30
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-subbuild\\CMakeLists.txt",
+        "matches": 8
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\CMakeLists.txt",
+        "matches": 14
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\docs\\mkdocs\\docs\\integration\\conan\\CMakeLists.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\docs\\mkdocs\\docs\\integration\\vcpkg\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\docs\\mkdocs\\requirements.txt",
+        "matches": 43
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\LICENSES\\Apache-2.0.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\LICENSES\\BSD-3-Clause.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\LICENSES\\GPL-3.0-only.txt",
+        "matches": 28
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\abi\\CMakeLists.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\abi\\diag\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\abi\\inline_ns\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\benchmarks\\CMakeLists.txt",
+        "matches": 5
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\CMakeLists.txt",
+        "matches": 25
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_add_subdirectory\\project\\CMakeLists.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_fetch_content\\CMakeLists.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_fetch_content\\project\\CMakeLists.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_fetch_content2\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_fetch_content2\\project\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_import\\project\\CMakeLists.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_import_minver\\project\\CMakeLists.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cmake_target_include_directories\\project\\CMakeLists.txt",
+        "matches": 11
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\cuda_example\\CMakeLists.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\thirdparty\\Fuzzer\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tests\\thirdparty\\Fuzzer\\test\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\tools\\serve_header\\requirements.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeCache.txt",
+        "matches": 6
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeFiles\\nlohmann_json-populate.dir\\Labels.txt",
+        "matches": 26
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-subbuild\\CMakeLists.txt",
+        "matches": 8
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-src\\CMakeLists.txt",
+        "matches": 11
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-src\\readme.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeCache.txt",
+        "matches": 6
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeFiles\\pugixml-populate.dir\\Labels.txt",
+        "matches": 31
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-subbuild\\CMakeLists.txt",
+        "matches": 8
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeCache.txt",
+        "matches": 6
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeFiles\\3.30.5-msvc23\\VCTargetsPath.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeFiles\\sqlite_amalgamation-populate.dir\\Labels.txt",
+        "matches": 37
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\sqlite_amalgamation-subbuild\\sqlite_amalgamation-populate-prefix\\src\\sqlite_amalgamation-populate-stamp\\sqlite_amalgamation-populate-urlinfo.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\CMakeLists.txt",
+        "matches": 11
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Diploma_Thesis_FINAL_v5.docx",
+        "matches": 272
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\FULL_DESCRIPTION.txt",
+        "matches": 52
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Midterm_Report.docx",
+        "matches": 64
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Progress Report 10.docx",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Python_to_Cpp_Conversion_Summary.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\sample_docs\\sample.docx",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\sample_docs\\sample.txt",
+        "matches": 3
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\third_party\\miniz\\CMakeLists.txt",
+        "matches": 7
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\Weekly Report 5.docx",
+        "matches": 1
+      }
+    ],
+    "keyword": "1",
+    "search_id": "15f9ed5b-b5d7-4b7b-8f33-4c242d107eff",
+    "timestamp": "2026-04-19T03:58:26"
+  },
+  {
+    "directory": "C:\\Users\\bobi9\\Documents\\Senior Project",
+    "file_type": "ALL",
+    "files_found": 12,
+    "files_stored": 0,
+    "found_files": [
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\h11-0.16.0.dist-info\\licenses\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip\\_vendor\\dependency_groups\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\AUTHORS.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-25.2.dist-info\\licenses\\src\\pip\\_vendor\\dependency_groups\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\AUTHORS.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\.venv\\Lib\\site-packages\\pip-26.0.1.dist-info\\licenses\\src\\pip\\_vendor\\dependency_groups\\LICENSE.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googlemock\\test\\gmock_output_test_golden.txt",
+        "matches": 6
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\googletest-src\\googletest\\test\\googletest-output-test-golden-lin.txt",
+        "matches": 4
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\nlohmann_json-src\\CMakeLists.txt",
+        "matches": 2
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-src\\CMakeLists.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\build\\_deps\\pugixml-src\\readme.txt",
+        "matches": 1
+      },
+      {
+        "file_path": "C:\\Users\\bobi9\\Documents\\Senior Project\\third_party\\miniz\\CMakeLists.txt",
+        "matches": 2
+      }
+    ],
+    "keyword": "@",
+    "search_id": "74a7f82b-0f9d-4c35-9c06-677eedcca043",
+    "timestamp": "2026-04-19T03:58:36"
   }
 ]

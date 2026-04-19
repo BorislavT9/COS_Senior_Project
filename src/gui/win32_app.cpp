@@ -148,6 +148,39 @@ void DrawPieLegend(HDC hdc, RECT legend_rc, const PieChartData& data) {
   SelectObject(hdc, prev_font);
 }
 
+// Fills a circular sector without GDI Pie() arc-direction quirks (device vs math coords).
+void FillCircularWedge(HDC hdc, int cx, int cy, int r, double start_deg, double sweep_deg,
+                       COLORREF fill) {
+  if (sweep_deg <= 0.0) return;
+  constexpr double kPi = 3.14159265358979323846;
+  if (sweep_deg >= 359.5) {
+    RECT ell = {cx - r, cy - r, cx + r, cy + r};
+    HBRUSH br = CreateSolidBrush(fill);
+    HBRUSH old_br = (HBRUSH)SelectObject(hdc, br);
+    SelectObject(hdc, GetStockObject(NULL_PEN));
+    Ellipse(hdc, ell.left, ell.top, ell.right, ell.bottom);
+    SelectObject(hdc, old_br);
+    DeleteObject(br);
+    return;
+  }
+  const int steps = (std::max)(8, (std::min)(96, static_cast<int>(std::ceil(sweep_deg / 4.0))));
+  std::vector<POINT> poly;
+  poly.reserve(static_cast<size_t>(steps) + 2);
+  poly.push_back({static_cast<LONG>(cx), static_cast<LONG>(cy)});
+  for (int i = 0; i <= steps; ++i) {
+    double deg = start_deg + sweep_deg * (static_cast<double>(i) / static_cast<double>(steps));
+    double rad = deg * kPi / 180.0;
+    poly.push_back({static_cast<LONG>(cx + std::lround(std::cos(rad) * r)),
+                    static_cast<LONG>(cy + std::lround(std::sin(rad) * r))});
+  }
+  HBRUSH br = CreateSolidBrush(fill);
+  HBRUSH old_br = (HBRUSH)SelectObject(hdc, br);
+  SelectObject(hdc, GetStockObject(NULL_PEN));
+  Polygon(hdc, poly.data(), static_cast<int>(poly.size()));
+  SelectObject(hdc, old_br);
+  DeleteObject(br);
+}
+
 void DrawPieChart(HDC hdc, RECT rc, const PieChartData& data) {
   HBRUSH bg = CreateSolidBrush(CLR_PANEL_BG);
   FillRect(hdc, &rc, bg);
@@ -203,27 +236,18 @@ void DrawPieChart(HDC hdc, RECT rc, const PieChartData& data) {
   int r = size / 2;
   RECT ell_rect = {cx - r, cy - r, cx + r, cy + r};
 
-  double angle0 = -90.0;  // degrees, top
-  HPEN border = CreatePen(PS_SOLID, 1, RGB(255, 255, 255));
-  HPEN old_pen = (HPEN)SelectObject(hdc, border);
+  double angle0 = -90.0;  // degrees, top; increasing angle moves clockwise on screen
   for (size_t i = 0; i < data.slices.size(); ++i) {
     double sweep = 360.0 * static_cast<double>(data.slices[i].value) / static_cast<double>(total_val);
-    double angle1 = angle0 + sweep;
-    double rad_a = angle0 * 3.14159265358979323846 / 180.0;
-    double rad_b = angle1 * 3.14159265358979323846 / 180.0;
-    int x1 = cx + static_cast<int>(std::cos(rad_a) * r);
-    int y1 = cy + static_cast<int>(std::sin(rad_a) * r);
-    int x2 = cx + static_cast<int>(std::cos(rad_b) * r);
-    int y2 = cy + static_cast<int>(std::sin(rad_b) * r);
-    HBRUSH br = CreateSolidBrush(data.slices[i].color);
-    HBRUSH old_br = (HBRUSH)SelectObject(hdc, br);
-    Pie(hdc, ell_rect.left, ell_rect.top, ell_rect.right, ell_rect.bottom, x1, y1, x2, y2);
-    DeleteObject(br);
-    SelectObject(hdc, old_br);
-    angle0 = angle1;
+    FillCircularWedge(hdc, cx, cy, r, angle0, sweep, data.slices[i].color);
+    angle0 += sweep;
   }
+  HPEN rim = CreatePen(PS_SOLID, 1, RGB(255, 255, 255));
+  HPEN old_pen = (HPEN)SelectObject(hdc, rim);
+  SelectObject(hdc, GetStockObject(NULL_BRUSH));
+  Ellipse(hdc, ell_rect.left, ell_rect.top, ell_rect.right, ell_rect.bottom);
   SelectObject(hdc, old_pen);
-  DeleteObject(border);
+  DeleteObject(rim);
 
   DrawPieLegend(hdc, legend_area, data);
 }
